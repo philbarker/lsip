@@ -2,34 +2,43 @@ import requests
 from bs4 import BeautifulSoup
 import json
 
-# This bit is a work in progress for pulling in FDs and L5s that aren't in the main learning aim open data, but
-# are on the ILR website
-
 API_ENDPOINT = 'https://submit-learner-data.service.gov.uk/find-a-learning-aim/LearningAimDetails/'
-#document.getElementById("initialState").innerHTML
-#    <div class="govuk-summary-list__row">
-#                 <dt class="govuk-summary-list__key">
-#                     Level
-#                 </dt>
-#                 <dd class="govuk-summary-list__value">
-#                     Level 5
-#                 </dd>
-#             </div>
 
-def lookup_learning_aim(ref:str):
+
+def lookup(ref: str):
+    qualification = {}
+    lookup_data = lookup_learning_aim(ref)
+    qualification['LearnAimRef'] = ref
+    qualification['LearnAimRefTitle'] = lookup_data['learningAimTitle']
+    qualification['NotionalNVQLevelv2'] = lookup_data['Level']
+    qualification['SectorSubjectAreaTier1'] = lookup_data['Sector subject area tier 1']
+    qualification['SectorSubjectAreaTier2'] = lookup_data['Sector subject area tier 2']
+    return qualification
+
+
+def lookup_learning_aim(ref: str):
+    """
+    Look up a learning aim given a code
+    :param ref: the reference id, typically 8 digits with optional letter
+    :return: a dictionary of the properties of the learning aim
+    """
     # pad with zeroes
-    ref = ref.zfill(8)
+    padded_ref = ref.zfill(8)
 
-    url = API_ENDPOINT + ref
+    url = API_ENDPOINT + padded_ref
 
-    print(url)
     response = requests.get(url)
-    print(response.text)
 
     soup = BeautifulSoup(response.text, 'html.parser')
-    data = soup.find(id="initialState").text
+    state = soup.find(id="initialState").text
+    data = json.loads(state)
 
-    return json.loads(data)
+    data_elements = soup.findAll(attrs={"class": "govuk-summary-list__row"})
+    for data_element in data_elements:
+        key = data_element.find(attrs={"class": "govuk-summary-list__key"}).get_text().strip()
+        value = data_element.find(attrs={"class": "govuk-summary-list__value"}).get_text().strip()
+        data[key] = value
+    return data
 
 
 
