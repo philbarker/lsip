@@ -1,6 +1,4 @@
-from learning_aim import lookup_learning_aim
 import pandas as pd
-
 
 
 def keep_only(dataframe, columns):
@@ -15,10 +13,13 @@ def main():
                           'data/ESFA_LiveCoursesWithRegionsAndVenuesReport-20230103.csv',
                           'data/ESFA_LiveCoursesWithRegionsAndVenuesReport-20230302.csv'
                           ]
-        ), ignore_index=True)
-    #esfa = pd.read_csv('data/ESFA_LiveCoursesWithRegionsAndVenuesReport-20220901.csv')
+        ),
+        ignore_index=True)
+    esfa['LEARN_AIM_REF'] = esfa['LEARN_AIM_REF'].astype('str')
+    esfa['LEARN_AIM_REF'] = esfa['LEARN_AIM_REF'].apply(lambda x: x.zfill(8))
     fes = pd.read_csv('data/FES-fes-et-provider-enrolments-202223-q1.csv')
-    quals = pd.read_csv('data/LearningDelivery.csv')
+    quals = pd.read_csv('data/LearningDelivery.csv', dtype={'LearnAimRef': object})
+    quals['LearnAimRef'] = quals['LearnAimRef'].astype(str)
     subjects = pd.read_csv('data/SectorSubjectArea.csv')
 
     levels = ['2','3','4','5']
@@ -45,7 +46,6 @@ def main():
 
     # Courses
     cols = ['PROVIDER_UKPRN', 'LEARN_AIM_REF', 'COURSE_NAME', 'COURSE_DESCRIPTION']
-    #'COURSE_NAME', 'COURSE_DESCRIPTION', 'LOCATION_POSTCODE', 'COURSE_URL', 'DELIVER_MODE', 'STUDY_MODE', 'ATTENDANCE_PATTERN', 'DURATION_UNIT', 'DURATION_VALUE']
     esfa.drop(esfa.columns.difference(cols), axis=1, inplace=True)
     esfa = esfa.drop_duplicates()
 
@@ -57,17 +57,18 @@ def main():
     fes = fes.merge(subjects_l1, left_on='ssa_t1_desc', right_on='SectorSubjectAreaTier1Desc')
     fes.to_csv('output/enrolments.csv')
 
+    # Filter to Barnet
+    courses = esfa[(esfa['PROVIDER_UKPRN'] == barnet)]
+
     # Join courses and qualifications
-    courses = esfa.merge(quals, left_on='LEARN_AIM_REF', right_on='LearnAimRef', how='left')
+    courses = courses.merge(quals, left_on='LEARN_AIM_REF', right_on='LearnAimRef', how='left')
+
+    # Join subjects
     courses = courses.merge(subjects, left_on='SectorSubjectAreaTier2', right_on='SectorSubjectAreaTier2', how='left')
     courses.drop('LearnAimRef', axis=1, inplace=True)
 
     # Filter out levels
     courses = courses[(courses['NotionalNVQLevelv2'].str.contains('|'.join(levels), regex=True, na=True))]
-
-    # Filter to Barnet
-    courses = courses[(courses['PROVIDER_UKPRN'] == barnet)]
-
 
     # Join on SOC
     courses = courses.merge(soc, left_on='LEARN_AIM_REF', right_on='Qualification', how='left')
@@ -76,6 +77,5 @@ def main():
 
 
 if __name__ == '__main__':
-    #print(lookup_learning_aim('303650'))
     main()
 
