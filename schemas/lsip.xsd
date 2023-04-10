@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema
+        xmlns="https://www.businessldn.co.uk/schemas/lsip"
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        xmlns:dc="http://purl.org/dc/elements/1.1/"
+        xmlns:xcriTerms="http://xcri.org/profiles/1.2/catalog/terms"
+        targetNamespace="https://www.businessldn.co.uk/schemas/lsip"
+        elementFormDefault="qualified"
+        attributeFormDefault="unqualified">
+
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="http://www.w3.org/2001/xml.xsd"/>
+    <xs:import namespace="http://www.w3.org/1999/xhtml"
+               schemaLocation="http://www.w3.org/2002/08/xhtml/xhtml1-strict.xsd"/>
+    <xs:import namespace="http://xcri.org/profiles/1.2/catalog" schemaLocation="../schemas/xcri_cap_1_2.xsd"/>
+    <xs:import namespace="http://purl.org/dc/elements/1.1/" schemaLocation="../schemas/dc.xsd"/>
+    <xs:import namespace="http://xcri.org/profiles/1.2/catalog/terms" schemaLocation="../schemas/xcri_cap_terms_1_2.xsd"/>
+
+    <xs:annotation>
+        <xs:documentation xml:lang="en">LSIP profile of XCRI CAP</xs:documentation>
+    </xs:annotation>
+
+    <xs:complexType name="UKPRN">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">A UK Provider Reference Number identifier</xs:documentation>
+        </xs:annotation>
+        <xs:simpleContent>
+            <xs:restriction base="dc:SimpleLiteral">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string"/>
+                </xs:simpleType>
+            </xs:restriction>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:complexType name="SSA2">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">Sector Subject Area level 2 identifier</xs:documentation>
+        </xs:annotation>
+        <xs:simpleContent>
+            <xs:restriction base="dc:SimpleLiteral">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string"/>
+                </xs:simpleType>
+            </xs:restriction>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:complexType name="SOC2020">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">UK Standard Occupational Code 2020 4-digit identifier</xs:documentation>
+        </xs:annotation>
+        <xs:simpleContent>
+            <xs:restriction base="dc:SimpleLiteral">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string"/>
+                </xs:simpleType>
+            </xs:restriction>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:complexType name="SIC">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">UK Standard Industry Code 5-digit identifier</xs:documentation>
+        </xs:annotation>
+        <xs:simpleContent>
+            <xs:restriction base="dc:SimpleLiteral">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string"/>
+                </xs:simpleType>
+            </xs:restriction>
+        </xs:simpleContent>
+    </xs:complexType>
+
+
+</xs:schema>
