@@ -123,6 +123,7 @@
 					<xs:element ref="mlo:cost" minOccurs="0" />
 					<xs:element name="age" minOccurs="0" />
 					<xs:element name="venue" type="venueDType" minOccurs="0" maxOccurs="unbounded" />
+					<xs:any namespace="https://www.businessldn.co.uk/schemas/lsip" minOccurs="0" maxOccurs="unbounded"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>

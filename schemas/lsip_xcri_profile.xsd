@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema
+	xmlns="http://xcri.org/profiles/1.2/catalog" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:mlo="http://purl.org/net/mlo"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:dcterms="http://purl.org/dc/terms/"
+	targetNamespace="http://xcri.org/profiles/1.2/catalog"
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified">
+
+	<xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="http://www.w3.org/2001/xml.xsd" />
+	<xs:import schemaLocation="lsip_mlo_profile.xsd" namespace="http://purl.org/net/mlo" />
+	<xs:import schemaLocation="dcterms.xsd" namespace="http://purl.org/dc/terms/" />
+	<xs:import namespace="http://purl.org/dc/elements/1.1/" schemaLocation="dc.xsd" />
+	<xs:include schemaLocation="types.xsd" />
+
+	<xs:annotation>
+		<xs:documentation xml:lang="en">See
+			http://www.xcri.org/wiki/index.php/XCRI_CAP_1.2
+		</xs:documentation>
+	</xs:annotation>
+
+    <xs:redefine schemaLocation="xcri_cap_1_2.xsd">
+
+    </xs:redefine>
+
+</xs:schema>

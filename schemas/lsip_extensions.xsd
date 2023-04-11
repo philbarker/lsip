@@ -3,6 +3,7 @@
         xmlns="https://www.businessldn.co.uk/schemas/lsip"
         xmlns:xs="http://www.w3.org/2001/XMLSchema"
         xmlns:dc="http://purl.org/dc/elements/1.1/"
+        xmlns:mlo="http://purl.org/net/mlo"
         xmlns:xcriTerms="http://xcri.org/profiles/1.2/catalog/terms"
         targetNamespace="https://www.businessldn.co.uk/schemas/lsip"
         elementFormDefault="qualified"
@@ -14,9 +15,17 @@
     <xs:import namespace="http://xcri.org/profiles/1.2/catalog" schemaLocation="../schemas/xcri_cap_1_2.xsd"/>
     <xs:import namespace="http://purl.org/dc/elements/1.1/" schemaLocation="../schemas/dc.xsd"/>
     <xs:import namespace="http://xcri.org/profiles/1.2/catalog/terms" schemaLocation="../schemas/xcri_cap_terms_1_2.xsd"/>
+    <xs:import namespace="http://purl.org/net/mlo" schemaLocation="../schemas/mlo_xcri_profile.xsd"/>
 
     <xs:annotation>
-        <xs:documentation xml:lang="en">LSIP profile of XCRI CAP</xs:documentation>
+        <xs:documentation xml:lang="en">
+            LSIP profile of XCRI CAP
+            ========================
+            This adds a number of definitions that extend XCRI
+
+            1. Additional identifier types: UKPRN, SOC2020, SSA2, ESFA
+            2. 'flexibleStartDate' element
+        </xs:documentation>
     </xs:annotation>
 
     <xs:complexType name="UKPRN">
@@ -31,7 +40,7 @@
             </xs:restriction>
         </xs:simpleContent>
     </xs:complexType>
-Adde
+
     <xs:complexType name="ESFA">
         <xs:annotation>
             <xs:documentation xml:lang="en">ESFA course identifier</xs:documentation>
@@ -84,5 +93,7 @@ Adde
         </xs:simpleContent>
     </xs:complexType>
 
+    <xs:element name="flexibleStartDate"/>
+    <xs:element name="amount"/>
 
 </xs:schema>

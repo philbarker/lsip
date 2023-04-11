@@ -19,7 +19,7 @@ attributeFormDefault="unqualified">
 	</xs:annotation>
 
 	<!-- LSIP additions -->
-	<xs:element name="careerOutcome" type="xcriTerms:careerOutcome"/>
+	<xs:element name="careerOutcome" type="careerOutcome"/>
 
 	<!--- Start of extensible description vocabulary -->
 

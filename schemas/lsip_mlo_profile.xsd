@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema
+        xmlns="https://www.businessldn.co.uk/schemas/lsip"
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        xmlns:dc="http://purl.org/dc/elements/1.1/"
+        xmlns:mlo="http://purl.org/net/mlo"
+        xmlns:lsip="https://www.businessldn.co.uk/schemas/lsip"
+        targetNamespace="http://purl.org/net/mlo"
+        elementFormDefault="qualified"
+>
+
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="http://www.w3.org/2001/xml.xsd"/>
+    <xs:import namespace="http://www.w3.org/1999/xhtml"
+               schemaLocation="http://www.w3.org/2002/08/xhtml/xhtml1-strict.xsd"/>
+    <xs:import namespace="http://xcri.org/profiles/1.2/catalog" schemaLocation="../schemas/xcri_cap_1_2.xsd"/>
+    <xs:import namespace="http://purl.org/dc/elements/1.1/" schemaLocation="../schemas/dc.xsd"/>
+    <xs:import namespace="http://xcri.org/profiles/1.2/catalog/terms" schemaLocation="../schemas/xcri_cap_terms_1_2.xsd"/>
+    <xs:import namespace="https://www.businessldn.co.uk/schemas/lsip" schemaLocation="../schemas/lsip_extensions.xsd"/>
+
+    <xs:annotation>
+        <xs:documentation xml:lang="en">
+            LSIP profile of MLO
+            ===================
+            Definition of content for 'mlo:cost'
+
+        </xs:documentation>
+    </xs:annotation>
+
+    <xs:redefine schemaLocation="mlo_xcri_profile.xsd">
+        <xs:complexType name="costDType">
+            <xs:complexContent>
+                <xs:restriction base="costDType">
+                    <xs:sequence>
+                        <xs:element ref="lsip:amount" minOccurs="1" maxOccurs="1"/>
+                        <xs:element ref="dc:description" minOccurs="1" maxOccurs="1"/>
+                    </xs:sequence>
+                </xs:restriction>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:redefine>
+</xs:schema>

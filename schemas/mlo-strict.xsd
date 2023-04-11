@@ -133,7 +133,7 @@
 	<xs:element name="level" type="dc:SimpleLiteral" />
 	<xs:element name="start" type="startDType" />
 	<xs:element name="duration" type="durationDType" />
-	<xs:element name="cost" type="dc:SimpleLiteral" />
+	<xs:element name="cost" type="costDType" />
 	<xs:element name="prerequisite" type="prerequisiteDType" />
 	<xs:element name="places" type="Resource" />
 	<xs:element name="engagement" type="dc:SimpleLiteral" />
@@ -144,6 +144,7 @@
 	<xs:complexType name="qualificationDType"></xs:complexType>
 	<xs:complexType name="creditDType"></xs:complexType>
 	<xs:complexType name="startDType"/>
+	<xs:complexType name="costDType"/>
 	<xs:complexType name="durationDType"></xs:complexType>
 	<xs:complexType name="prerequisiteDType"></xs:complexType>
 	<xs:complexType name="assessmentDType"></xs:complexType>
