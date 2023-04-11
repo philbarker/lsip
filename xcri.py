@@ -133,7 +133,8 @@ class Cost(Element):
         super().__init__()
         self.element_name = MLO+"cost"
         self.mappings = {
-            LSIP+"amount": 'Presentation.cost',
+            LSIP+"price": 'Presentation.cost',
+            LSIP+'priceCurrency': "Presentation.costCurrency",
             DC+"description": "Presentation.costDescription"
         }
         self.required=[LSIP+"amount"]

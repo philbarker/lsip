@@ -21,6 +21,7 @@ def main():
     # Set some constants
     data['Presentation.start'] = '2022/23'
     data['Provider.name'] = 'Poppleton College'
+    data['Presentation.costCurrency'] = 'GBP'
     xcri = Xcri(courses=data.to_dict('records'))
     xml = etree.tostring(xcri.to_xml(), pretty_print=True, encoding='utf-8')
     with open('output' + os.sep + 'example.xml', mode='wb') as file:

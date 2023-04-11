@@ -31,7 +31,8 @@
             <xs:complexContent>
                 <xs:restriction base="costDType">
                     <xs:sequence>
-                        <xs:element ref="lsip:amount" minOccurs="1" maxOccurs="1"/>
+                        <xs:element ref="lsip:price" minOccurs="1" maxOccurs="1"/>
+                        <xs:element ref="lsip:priceCurrency" minOccurs="1" maxOccurs="1"/>
                         <xs:element ref="dc:description" minOccurs="1" maxOccurs="1"/>
                     </xs:sequence>
                 </xs:restriction>

@@ -94,6 +94,6 @@
     </xs:complexType>
 
     <xs:element name="flexibleStartDate"/>
-    <xs:element name="amount"/>
-
+    <xs:element name="price"/>
+    <xs:element name="priceCurrency"/>
 </xs:schema>
