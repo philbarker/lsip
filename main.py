@@ -1,3 +1,5 @@
+import numpy as np
+
 import esfa
 from xcri import Xcri
 from lxml import etree
@@ -9,6 +11,7 @@ def main():
     provider_ukprn = 10000533
     # Get some open data
     courses = esfa.create_open_data(provider_ukprn=provider_ukprn, output_path='output' + os.sep + 'courses.csv')
+    courses = pd.DataFrame(courses).replace({np.nan: None})
     # Merge the minimum collection
     data = pd.read_excel('examples' + os.sep + 'LSIP Minimal Data Collection Template Example.xlsx', sheet_name='Courses and qualifications', header=1)
     data = data.dropna(axis=0, how='all')

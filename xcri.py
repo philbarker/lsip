@@ -29,12 +29,12 @@ SOC2020 = 'lsip:SOC2020'
 SSA2 = 'lsip:SSA2'
 UKPRN_TYPE = 'lsip:UKPRN'
 
-SCHEMA_LOCATIONS = "http://xcri.org/profiles/1.2/catalog ../schemas/xcri_cap_1_2.xsd " \
-                   "http://xcri.org/profiles/1.2/catalog/terms ../schemas/xcri_cap_terms_1_2.xsd " \
-                   "http://purl.org/net/mlo ../schemas/mlo_xcri_profile.xsd " \
-                   "http://purl.org/dc/elements/1.1/ ../schemas/dc.xsd " \
-                   "https://www.businessldn.co.uk/schemas/lsip ../schemas/lsip.xsd " \
-                   "http://purl.org/dc/terms/ ../schemas/dcterms.xsd"
+SCHEMA_LOCATIONS = "http://xcri.org/profiles/1.2/catalog ../schemas/lsip_xcri_profile.xsd " \
+        "http://xcri.org/profiles/1.2/catalog/terms ../schemas/xcri_cap_terms_1_2.xsd " \
+        "http://purl.org/net/mlo ../schemas/lsip_mlo_profile.xsd " \
+        "http://purl.org/dc/elements/1.1/ ../schemas/dc.xsd " \
+        "https://www.businessldn.co.uk/schemas/lsip ../schemas/lsip_extensions.xsd " \
+        "http://purl.org/dc/terms/ ../schemas/dcterms.xsd"
 
 
 class Element:
@@ -46,7 +46,7 @@ class Element:
 
     def map_attributes(self, obj):
         for k, v in self.mappings.items():
-            if v in obj:
+            if v in obj and obj[v] is not None and obj[v] != '':
                 self.__setattr__(k, obj[v])
 
     def has_identifier(self, obj, collection):
@@ -117,8 +117,26 @@ class Presentation(Element):
         self.mappings = {
             DC+'identifier': 'Presentation.identifier',
             MLO+'start': "Presentation.start",
-            MLO+'places': 'Places'
+            'studyMode': "Presentation.studyMode",
+            'attendanceMode': "Presentation.attendanceMode",
+            'attendancePattern': "Presentation.attendancePattern",
+            MLO + 'places': 'Places'
         }
+        self.map_attributes(obj)
+        self.cost = Cost(obj)
+        self.mappings = {LSIP+'flexibleStartDate': "Presentation.flexibleStartDate"}
+        self.map_attributes(obj)
+
+
+class Cost(Element):
+    def __init__(self, obj):
+        super().__init__()
+        self.element_name = MLO+"cost"
+        self.mappings = {
+            LSIP+"amount": 'Presentation.cost',
+            DC+"description": "Presentation.costDescription"
+        }
+        self.required=[LSIP+"amount"]
         self.map_attributes(obj)
 
 
@@ -129,7 +147,9 @@ class Course(Element):
         self.subjectArea.append(SubjectArea(obj))
         self.mappings = {
             DC+'identifier': 'Course.identifier',
-            DC+'title': 'Course.name'
+            DC+'title': 'Course.name',
+            MLO+'prerequisite': 'Course.entryRequirements',
+            MLO+'url': 'Course.url'
         }
         self.required = [DC+'identifier']
         self.map_attributes(obj)

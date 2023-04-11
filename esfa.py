@@ -36,6 +36,7 @@ def create_open_data(provider_ukprn=10000533, output_path='output' + os.sep + 'c
         ),
         ignore_index=True)
     esfa['LEARN_AIM_REF'] = esfa['LEARN_AIM_REF'].astype('str')
+    esfa['COURSE_URL'] = esfa['COURSE_URL'].astype('object')
     esfa['LEARN_AIM_REF'] = esfa['LEARN_AIM_REF'].apply(lambda x: x.zfill(8))
 
     fes = pd.read_csv('data/FES-fes-et-provider-enrolments-202223-q1.csv')
@@ -53,7 +54,9 @@ def create_open_data(provider_ukprn=10000533, output_path='output' + os.sep + 'c
     keep_only(soc, ['Qualification', 'SOC 2020 Code', 'SOC 2020 UNIT GROUP DESCRIPTIONS'])
 
     # Subject lookups
-    cols = ['SectorSubjectAreaTier1Desc', 'SectorSubjectAreaTier2Desc', 'SectorSubjectAreaTier1',
+    cols = ['SectorSubjectAreaTier1Desc',
+            'SectorSubjectAreaTier2Desc',
+            'SectorSubjectAreaTier1',
             'SectorSubjectAreaTier2']
     subjects = load(csv_file='data/SectorSubjectArea.csv')
     subjects = subjects[
@@ -66,11 +69,17 @@ def create_open_data(provider_ukprn=10000533, output_path='output' + os.sep + 'c
 
     # Qualifications
     quals = quals[(quals['EffectiveTo'].isnull()) | (quals['EffectiveTo'] == u'')]
-    cols = ['LearnAimRef', 'LearnAimRefTitle', 'NotionalNVQLevelv2', 'SectorSubjectAreaTier1', 'SectorSubjectAreaTier2']
+    cols = ['LearnAimRef',
+            'LearnAimRefTitle',
+            'NotionalNVQLevelv2',
+            'SectorSubjectAreaTier1',
+            'SectorSubjectAreaTier2']
     keep_only(quals, cols)
 
     # Courses
-    cols = ['PROVIDER_UKPRN', 'LEARN_AIM_REF', 'COURSE_NAME', 'COURSE_DESCRIPTION']
+    cols = ['PROVIDER_UKPRN', 'LEARN_AIM_REF', 'COURSE_NAME', 'COURSE_DESCRIPTION',
+            'DELIVER_MODE', 'STUDY_MODE', 'ATTENDANCE_PATTERN', 'FLEXIBLE_STARTDATE',
+            'COURSE_URL', 'ENTRY_REQUIREMENTS', 'COST', 'COST_DESCRIPTION']
     esfa.drop(esfa.columns.difference(cols), axis=1, inplace=True)
     esfa = esfa.drop_duplicates()
 
@@ -101,7 +110,8 @@ def create_open_data(provider_ukprn=10000533, output_path='output' + os.sep + 'c
     # Output
     cols = ['PROVIDER_UKPRN', 'LEARN_AIM_REF', 'COURSE_NAME', 'COURSE_DESCRIPTION', 'LearnAimRefTitle',
             'NotionalNVQLevelv2', 'SectorSubjectAreaTier2', 'SectorSubjectAreaTier2Desc', 'SOC 2020 Code',
-            'SOC 2020 UNIT GROUP DESCRIPTIONS']
+            'SOC 2020 UNIT GROUP DESCRIPTIONS', 'DELIVER_MODE', 'STUDY_MODE', 'ATTENDANCE_PATTERN',
+            'FLEXIBLE_STARTDATE', 'COURSE_URL', 'ENTRY_REQUIREMENTS', 'COST', 'COST_DESCRIPTION']
     keep_only(courses, cols)
     courses.rename(columns=
     {
@@ -114,8 +124,17 @@ def create_open_data(provider_ukprn=10000533, output_path='output' + os.sep + 'c
         'SectorSubjectAreaTier2': "Course.subject.code",
         'SectorSubjectAreaTier2Desc': "Course.subject.description",
         'SOC 2020 Code': "Qualification.occupation.code",
-        'SOC 2020 UNIT GROUP DESCRIPTIONS': "Qualification.occupation.description"}
+        'SOC 2020 UNIT GROUP DESCRIPTIONS': "Qualification.occupation.description",
+        "DELIVER_MODE":"Presentation.attendanceMode",
+        "STUDY_MODE": "Presentation.studyMode",
+        "ATTENDANCE_PATTERN": "Presentation.attendancePattern",
+        "FLEXIBLE_STARTDATE": "Presentation.flexibleStartDate",
+        'COURSE_URL': 'Course.url',
+        'ENTRY_REQUIREMENTS': 'Course.entryRequirements',
+        'COST': "Presentation.cost",
+        'COST_DESCRIPTION': 'Presentation.costDescription'
+    }
         , inplace=True)
-    courses.to_csv(output_path)
+    courses.to_csv(output_path, na_rep='')
 
     return courses
