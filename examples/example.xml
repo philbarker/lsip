@@ -1,0 +1,153 @@
+<catalog xmlns="http://xcri.org/profiles/1.2/catalog" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xcriTerms="http://xcri.org/profiles/1.2/catalog/terms" xmlns:lsip="https://www.businessldn.co.uk/schemas/lsip" xmlns:mlo="http://purl.org/net/mlo" generated="2013-12-21T17:45:00Z" xsi:schemaLocation="http://xcri.org/profiles/1.2/catalog ../schemas/xcri_cap_1_2.xsd http://xcri.org/profiles/1.2/catalog/terms ../schemas/xcri_cap_terms_1_2.xsd http://purl.org/net/mlo ../schemas/mlo_xcri_profile.xsd http://purl.org/dc/elements/1.1/ ../schemas/dc.xsd https://www.businessldn.co.uk/schemas/lsip ../schemas/lsip.xsd http://purl.org/dc/terms/ ../schemas/dcterms.xsd">
+  <provider>
+    <dc:identifier xsi:type="lsip:UKPRN">10000533</dc:identifier>
+    <course>
+      <dc:subject>
+        <dc:identifier xsi:type="lsip:SSA2">2.1</dc:identifier>
+        <dc:description>Science</dc:description>
+      </dc:subject>
+      <dc:title>Level 2 Extended Certificate in Applied Science</dc:title>
+      <mlo:qualification>
+        <dc:identifier>6006318X</dc:identifier>
+        <dc:title>BTEC First Extended Certificate in Applied Science</dc:title>
+        <mlo:level>2</mlo:level>
+        <xcriTerms:careerOutcome>
+          <dc:identifier xsi:type="lsip:SOC2020">2111</dc:identifier>
+          <dc:description>Chemical scientists</dc:description>
+        </xcriTerms:careerOutcome>
+        <xcriTerms:careerOutcome>
+          <dc:identifier xsi:type="lsip:SOC2020">2112</dc:identifier>
+          <dc:description>Biological scientists</dc:description>
+        </xcriTerms:careerOutcome>
+        <xcriTerms:careerOutcome>
+          <dc:identifier xsi:type="lsip:SOC2020">2113</dc:identifier>
+          <dc:description>Biochemists and biomedical scientists</dc:description>
+        </xcriTerms:careerOutcome>
+        <xcriTerms:careerOutcome>
+          <dc:identifier xsi:type="lsip:SOC2020">2114</dc:identifier>
+          <dc:description>Physical scientists</dc:description>
+        </xcriTerms:careerOutcome>
+        <xcriTerms:careerOutcome>
+          <dc:identifier xsi:type="lsip:SOC2020">3111</dc:identifier>
+          <dc:description>Laboratory technicians</dc:description>
+        </xcriTerms:careerOutcome>
+      </mlo:qualification>
+      <presentation>
+        <mlo:start>2022/23</mlo:start>
+        <mlo:places>20</mlo:places>
+      </presentation>
+    </course>
+    <course>
+      <dc:subject>
+        <dc:identifier xsi:type="lsip:SSA2">2.1</dc:identifier>
+        <dc:description>Science</dc:description>
+      </dc:subject>
+      <dc:title>BTEC Level 2 Extended Certificate in Applied Science</dc:title>
+      <mlo:qualification>
+        <dc:identifier>6006318X</dc:identifier>
+        <dc:title>BTEC First Extended Certificate in Applied Science</dc:title>
+        <mlo:level>2</mlo:level>
+        <xcriTerms:careerOutcome>
+          <dc:identifier xsi:type="lsip:SOC2020">2111</dc:identifier>
+          <dc:description>Chemical scientists</dc:description>
+        </xcriTerms:careerOutcome>
+        <xcriTerms:careerOutcome>
+          <dc:identifier xsi:type="lsip:SOC2020">2112</dc:identifier>
+          <dc:description>Biological scientists</dc:description>
+        </xcriTerms:careerOutcome>
+        <xcriTerms:careerOutcome>
+          <dc:identifier xsi:type="lsip:SOC2020">2113</dc:identifier>
+          <dc:description>Biochemists and biomedical scientists</dc:description>
+        </xcriTerms:careerOutcome>
+        <xcriTerms:careerOutcome>
+          <dc:identifier xsi:type="lsip:SOC2020">2114</dc:identifier>
+          <dc:description>Physical scientists</dc:description>
+        </xcriTerms:careerOutcome>
+        <xcriTerms:careerOutcome>
+          <dc:identifier xsi:type="lsip:SOC2020">3111</dc:identifier>
+          <dc:description>Laboratory technicians</dc:description>
+        </xcriTerms:careerOutcome>
+      </mlo:qualification>
+      <presentation>
+        <mlo:start>2022/23</mlo:start>
+        <mlo:places>20</mlo:places>
+      </presentation>
+    </course>
+    <course>
+      <dc:subject>
+        <dc:identifier xsi:type="lsip:SSA2">6.1</dc:identifier>
+        <dc:description>ICT Practitioners</dc:description>
+      </dc:subject>
+      <dc:title>L3 Foundation Diploma - Information Technology (Year 1)</dc:title>
+      <mlo:qualification>
+        <dc:identifier>6017576X</dc:identifier>
+        <dc:title>BTEC National Foundation Diploma in Information Technology</dc:title>
+        <mlo:level>3</mlo:level>
+        <xcriTerms:careerOutcome>
+          <dc:identifier xsi:type="lsip:SOC2020">3132</dc:identifier>
+          <dc:description>IT user support technicians</dc:description>
+        </xcriTerms:careerOutcome>
+        <xcriTerms:careerOutcome>
+          <dc:identifier xsi:type="lsip:SOC2020">5244</dc:identifier>
+          <dc:description>Computer system and equipment installers and servicers</dc:description>
+        </xcriTerms:careerOutcome>
+        <xcriTerms:careerOutcome>
+          <dc:identifier xsi:type="lsip:SOC2020">3131</dc:identifier>
+          <dc:description>IT operations technicians</dc:description>
+        </xcriTerms:careerOutcome>
+      </mlo:qualification>
+      <presentation>
+        <mlo:start>2022/23</mlo:start>
+        <mlo:places>32</mlo:places>
+      </presentation>
+    </course>
+    <course>
+      <dc:subject>
+        <dc:identifier xsi:type="lsip:SSA2">9.2</dc:identifier>
+        <dc:description>Crafts, Creative Arts and Design</dc:description>
+      </dc:subject>
+      <dc:title>UAL L2 Diploma In Art &amp; Design</dc:title>
+      <mlo:qualification>
+        <dc:identifier>6003807X</dc:identifier>
+        <dc:title>Diploma in Art and Design</dc:title>
+        <mlo:level>2</mlo:level>
+        <xcriTerms:careerOutcome>
+          <dc:identifier xsi:type="lsip:SOC2020">3429</dc:identifier>
+          <dc:description>Design occupations n.e.c.</dc:description>
+        </xcriTerms:careerOutcome>
+        <xcriTerms:careerOutcome>
+          <dc:identifier xsi:type="lsip:SOC2020">3411</dc:identifier>
+          <dc:description>Artists</dc:description>
+        </xcriTerms:careerOutcome>
+      </mlo:qualification>
+      <presentation>
+        <mlo:start>2022/23</mlo:start>
+        <mlo:places>36</mlo:places>
+      </presentation>
+    </course>
+    <course>
+      <dc:subject>
+        <dc:identifier xsi:type="lsip:SSA2">7.3</dc:identifier>
+        <dc:description>Service Enterprises</dc:description>
+      </dc:subject>
+      <dc:title>Level 3 in Beauty Therapy</dc:title>
+      <mlo:qualification>
+        <dc:identifier>5008964X</dc:identifier>
+        <dc:title>Diploma in Beauty Therapy Treatments</dc:title>
+        <mlo:level>3</mlo:level>
+        <xcriTerms:careerOutcome>
+          <dc:identifier xsi:type="lsip:SOC2020">6222</dc:identifier>
+          <dc:description>Beauticians and related occupations</dc:description>
+        </xcriTerms:careerOutcome>
+        <xcriTerms:careerOutcome>
+          <dc:identifier xsi:type="lsip:SOC2020">1253</dc:identifier>
+          <dc:description>Hairdressing and beauty salon managers and proprietors</dc:description>
+        </xcriTerms:careerOutcome>
+      </mlo:qualification>
+      <presentation>
+        <mlo:start>2022/23</mlo:start>
+        <mlo:places>23</mlo:places>
+      </presentation>
+    </course>
+  </provider>
+</catalog>
