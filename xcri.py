@@ -102,7 +102,10 @@ class Identifier():
 class Provider(Element):
     def __init__(self, obj):
         super().__init__()
-        self.mappings = {DC+'identifier': 'Provider.identifier'}
+        self.mappings = {
+            DC+'identifier': 'Provider.identifier',
+            DC+'title': 'Provider.name'
+        }
         self.required = [DC+'identifier']
         self.map_attributes(obj)
         self.__setattr__(DC+'identifier', Identifier(UKPRN_TYPE, self.__getattribute__(DC+'identifier')))

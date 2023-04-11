@@ -1,6 +1,7 @@
 <catalog xmlns="http://xcri.org/profiles/1.2/catalog" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xcriTerms="http://xcri.org/profiles/1.2/catalog/terms" xmlns:lsip="https://www.businessldn.co.uk/schemas/lsip" xmlns:mlo="http://purl.org/net/mlo" generated="2013-12-21T17:45:00Z" xsi:schemaLocation="http://xcri.org/profiles/1.2/catalog ../schemas/xcri_cap_1_2.xsd http://xcri.org/profiles/1.2/catalog/terms ../schemas/xcri_cap_terms_1_2.xsd http://purl.org/net/mlo ../schemas/mlo_xcri_profile.xsd http://purl.org/dc/elements/1.1/ ../schemas/dc.xsd https://www.businessldn.co.uk/schemas/lsip ../schemas/lsip.xsd http://purl.org/dc/terms/ ../schemas/dcterms.xsd">
   <provider>
     <dc:identifier xsi:type="lsip:UKPRN">10000533</dc:identifier>
+    <dc:title>Poppleton College</dc:title>
     <course>
       <dc:subject>
         <dc:identifier xsi:type="lsip:SSA2">2.1</dc:identifier>

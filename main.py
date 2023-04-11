@@ -15,11 +15,14 @@ def main():
     data = data.dropna(axis=1, how='all')
     data = pd.merge(left=courses, right=data, left_on='Qualification.identifier', right_on='Qualification Aim Reference')
     data.drop(columns='Qualification Aim Reference', inplace=True)
+    # Set some constants
     data['Presentation.start'] = '2022/23'
+    data['Provider.name'] = 'Poppleton College'
     xcri = Xcri(courses=data.to_dict('records'))
     xml = etree.tostring(xcri.to_xml(), pretty_print=True, encoding='utf-8')
     with open('output' + os.sep + 'example.xml', mode='wb') as file:
         file.write(xml)
+
 
 if __name__ == '__main__':
     main()
