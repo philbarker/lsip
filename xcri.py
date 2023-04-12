@@ -28,6 +28,8 @@ DCTERMS_PREFIX = 'dcterms'
 SOC2020 = 'lsip:SOC2020'
 SSA2 = 'lsip:SSA2'
 UKPRN_TYPE = 'lsip:UKPRN'
+LAR_TYPE = 'lsip:LAR'
+NVQ_TYPE = 'lsip:NVQ-equivalent'
 
 SCHEMA_LOCATIONS = "http://xcri.org/profiles/1.2/catalog ../schemas/lsip_xcri_profile.xsd " \
         "http://xcri.org/profiles/1.2/catalog/terms ../schemas/xcri_cap_terms_1_2.xsd " \
@@ -76,7 +78,7 @@ class Element:
                 elif type(self.__getattribute__(attr)) == list:
                     for item in self.__getattribute__(attr):
                         item.to_xml(element)
-                elif type(self.__getattribute__(attr)) == Identifier:
+                elif type(self.__getattribute__(attr)) == ExtendedElement:
                     self.__getattribute__(attr).to_xml(element)
                 elif attr == 'type':
                     elem = etree.SubElement(element, DC+'type')
@@ -87,13 +89,15 @@ class Element:
         return element
 
 
-class Identifier():
-    def __init__(self, type, value):
+class ExtendedElement(Element):
+    def __init__(self, type, value, name=DC + 'identifier'):
+        super().__init__()
         self.type = type
         self.value = value
+        self.element_name = name
 
     def to_xml(self, parent):
-        element = etree.SubElement(parent, DC+'identifier')
+        element = etree.SubElement(parent, self.element_name)
         element.set(XSI+'type', self.type)
         element.text = str(self.value)
         return element
@@ -108,7 +112,7 @@ class Provider(Element):
         }
         self.required = [DC+'identifier']
         self.map_attributes(obj)
-        self.__setattr__(DC+'identifier', Identifier(UKPRN_TYPE, self.__getattribute__(DC+'identifier')))
+        self.__setattr__(DC +'identifier', ExtendedElement(UKPRN_TYPE, self.__getattribute__(DC + 'identifier')))
 
 
 class Presentation(Element):
@@ -124,7 +128,11 @@ class Presentation(Element):
         }
         self.map_attributes(obj)
         self.cost = Cost(obj)
-        self.mappings = {LSIP+'flexibleStartDate': "Presentation.flexibleStartDate"}
+        self.venue = Venue(obj)
+        self.mappings = {
+            LSIP+'flexibleStartDate': "Presentation.flexibleStartDate",
+            LSIP + 'placesTaken': 'Enrolments'
+        }
         self.map_attributes(obj)
 
 
@@ -176,7 +184,7 @@ class CareerOutcome(Element):
         self.required = [DC+'identifier']
         self.map_attributes(obj)
 
-        self.__setattr__(DC+'identifier', Identifier(SOC2020, self.__getattribute__(DC+'identifier')))
+        self.__setattr__(DC +'identifier', ExtendedElement(SOC2020, self.__getattribute__(DC + 'identifier')))
 
 
 class SubjectArea(Element):
@@ -189,7 +197,41 @@ class SubjectArea(Element):
         }
         self.required = ['identifier']
         self.map_attributes(obj)
-        self.__setattr__(DC+'identifier', Identifier(SSA2, self.__getattribute__(DC+'identifier')))
+        self.__setattr__(DC +'identifier', ExtendedElement(SSA2, self.__getattribute__(DC + 'identifier')))
+
+
+class Venue(Element):
+    def __init__(self, obj):
+        super().__init__()
+        self.provider = ProviderVenue(obj)
+
+
+class ProviderVenue(Element):
+    def __init__(self, obj):
+        super().__init__()
+        self.element_name = 'provider'
+        self.mappings = {
+            DC + 'identifier': 'Provider.identifier',
+            DC + 'title': 'Location.name'
+        }
+        self.map_attributes(obj)
+        self.__setattr__(DC +'identifier', ExtendedElement(UKPRN_TYPE, self.__getattribute__(DC + 'identifier')))
+        self.location = Location(obj)
+
+
+class Location(Element):
+    def __init__(self, obj):
+        super().__init__()
+        self.element_name = MLO + 'location'
+        self.mappings = {
+            MLO + 'street': 'Location.address1',
+            MLO + 'town': 'Location.town',
+            MLO + 'postcode': 'Location.postcode',
+            MLO + 'address': 'Location.address2',
+            MLO + 'email': 'Location.email',
+            MLO + 'phone': 'Location.phone'
+        }
+        self.map_attributes(obj)
 
 
 class Qualification(Element):
@@ -203,6 +245,8 @@ class Qualification(Element):
         }
         self.required = [DC+'identifier', DC+'title']
         self.map_attributes(obj)
+        self.__setattr__(DC+'identifier', ExtendedElement(LAR_TYPE, self.__getattribute__(DC + 'identifier')))
+        self.__setattr__(MLO+'level', ExtendedElement(NVQ_TYPE, self.__getattribute__(MLO + 'level'), name=MLO+'level'))
         self.career_outcome = []
         career_outcome = CareerOutcome(obj)
         if career_outcome.is_valid():

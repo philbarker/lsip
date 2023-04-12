@@ -79,7 +79,8 @@ def create_open_data(provider_ukprn=10000533, output_path='output' + os.sep + 'c
     # Courses
     cols = ['PROVIDER_UKPRN', 'LEARN_AIM_REF', 'COURSE_NAME', 'COURSE_DESCRIPTION',
             'DELIVER_MODE', 'STUDY_MODE', 'ATTENDANCE_PATTERN', 'FLEXIBLE_STARTDATE',
-            'COURSE_URL', 'ENTRY_REQUIREMENTS', 'COST', 'COST_DESCRIPTION']
+            'COURSE_URL', 'ENTRY_REQUIREMENTS', 'COST', 'COST_DESCRIPTION',
+            'LOCATION_NAME','LOCATION_ADDRESS1', 'LOCATION_ADDRESS2', 'LOCATION_COUNTY','LOCATION_POSTCODE','LOCATION_TOWN']
     esfa.drop(esfa.columns.difference(cols), axis=1, inplace=True)
     esfa = esfa.drop_duplicates()
 
@@ -111,7 +112,8 @@ def create_open_data(provider_ukprn=10000533, output_path='output' + os.sep + 'c
     cols = ['PROVIDER_UKPRN', 'LEARN_AIM_REF', 'COURSE_NAME', 'COURSE_DESCRIPTION', 'LearnAimRefTitle',
             'NotionalNVQLevelv2', 'SectorSubjectAreaTier2', 'SectorSubjectAreaTier2Desc', 'SOC 2020 Code',
             'SOC 2020 UNIT GROUP DESCRIPTIONS', 'DELIVER_MODE', 'STUDY_MODE', 'ATTENDANCE_PATTERN',
-            'FLEXIBLE_STARTDATE', 'COURSE_URL', 'ENTRY_REQUIREMENTS', 'COST', 'COST_DESCRIPTION']
+            'FLEXIBLE_STARTDATE', 'COURSE_URL', 'ENTRY_REQUIREMENTS', 'COST', 'COST_DESCRIPTION',
+            'LOCATION_NAME','LOCATION_ADDRESS1', 'LOCATION_ADDRESS2', 'LOCATION_COUNTY','LOCATION_POSTCODE','LOCATION_TOWN']
     keep_only(courses, cols)
     courses.rename(columns=
     {
@@ -132,7 +134,13 @@ def create_open_data(provider_ukprn=10000533, output_path='output' + os.sep + 'c
         'COURSE_URL': 'Course.url',
         'ENTRY_REQUIREMENTS': 'Course.entryRequirements',
         'COST': "Presentation.cost",
-        'COST_DESCRIPTION': 'Presentation.costDescription'
+        'COST_DESCRIPTION': 'Presentation.costDescription',
+        'LOCATION_NAME': 'Location.name',
+        'LOCATION_ADDRESS1': 'Location.address1',
+        'LOCATION_ADDRESS2': 'Location.address2',
+        'LOCATION_COUNTY': 'Location.county',
+        'LOCATION_POSTCODE': 'Location.postcode',
+        'LOCATION_TOWN': 'Location.town'
     }
         , inplace=True)
     courses.to_csv(output_path, na_rep='')
