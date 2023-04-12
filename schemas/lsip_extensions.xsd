@@ -124,4 +124,6 @@
     <xs:element name="price"/>
     <xs:element name="priceCurrency"/>
     <xs:element name="placesTaken"/>
+    <xs:element name="nationalDeliveryIndicator" type="xs:boolean"/>
+    <xs:element name="regions"/>
 </xs:schema>
