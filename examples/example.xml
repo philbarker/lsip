@@ -1,4 +1,4 @@
-<catalog xmlns="http://xcri.org/profiles/1.2/catalog" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xcriTerms="http://xcri.org/profiles/1.2/catalog/terms" xmlns:lsip="https://www.businessldn.co.uk/schemas/lsip" xmlns:mlo="http://purl.org/net/mlo" generated="2013-12-21T17:45:00Z" xsi:schemaLocation="http://xcri.org/profiles/1.2/catalog ../schemas/xcri_cap_1_2.xsd http://xcri.org/profiles/1.2/catalog/terms ../schemas/xcri_cap_terms_1_2.xsd http://purl.org/net/mlo ../schemas/mlo_xcri_profile.xsd http://purl.org/dc/elements/1.1/ ../schemas/dc.xsd https://www.businessldn.co.uk/schemas/lsip ../schemas/lsip.xsd http://purl.org/dc/terms/ ../schemas/dcterms.xsd">
+<catalog xmlns="http://xcri.org/profiles/1.2/catalog" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xcriTerms="http://xcri.org/profiles/1.2/catalog/terms" xmlns:lsip="https://www.businessldn.co.uk/schemas/lsip" xmlns:mlo="http://purl.org/net/mlo" generated="2013-12-21T17:45:00Z" xsi:schemaLocation="http://xcri.org/profiles/1.2/catalog ../schemas/lsip_xcri_profile.xsd http://xcri.org/profiles/1.2/catalog/terms ../schemas/xcri_cap_terms_1_2.xsd http://purl.org/net/mlo ../schemas/lsip_mlo_profile.xsd http://purl.org/dc/elements/1.1/ ../schemas/dc.xsd https://www.businessldn.co.uk/schemas/lsip ../schemas/lsip_extensions.xsd http://purl.org/dc/terms/ ../schemas/dcterms.xsd">
   <provider>
     <dc:identifier xsi:type="lsip:UKPRN">10000533</dc:identifier>
     <dc:title>Poppleton College</dc:title>
@@ -8,10 +8,11 @@
         <dc:description>Science</dc:description>
       </dc:subject>
       <dc:title>Level 2 Extended Certificate in Applied Science</dc:title>
+      <mlo:prerequisite>To get on this course you will be expected to have the equivalent to 4 GCSEs at grades 9-3 including Science, Maths and English. Alternatively, you should have a BTEC Level 1 Diploma in Science or a related subject.    You may be asked to sit a Science test.  </mlo:prerequisite>
       <mlo:qualification>
-        <dc:identifier>6006318X</dc:identifier>
+        <dc:identifier xsi:type="lsip:LAR">6006318X</dc:identifier>
         <dc:title>BTEC First Extended Certificate in Applied Science</dc:title>
-        <mlo:level>2</mlo:level>
+        <mlo:level xsi:type="lsip:NVQ-equivalent">2</mlo:level>
         <xcriTerms:careerOutcome>
           <dc:identifier xsi:type="lsip:SOC2020">2111</dc:identifier>
           <dc:description>Chemical scientists</dc:description>
@@ -35,7 +36,28 @@
       </mlo:qualification>
       <presentation>
         <mlo:start>2022/23</mlo:start>
+        <studyMode>1.0</studyMode>
+        <attendanceMode>1</attendanceMode>
+        <attendancePattern>1.0</attendancePattern>
         <mlo:places>20</mlo:places>
+        <mlo:cost>
+          <lsip:price>1987.0</lsip:price>
+          <lsip:priceCurrency>GBP</lsip:priceCurrency>
+          <dc:description>Tuition fee</dc:description>
+        </mlo:cost>
+        <venue>
+          <provider>
+            <dc:identifier xsi:type="lsip:UKPRN">10000533</dc:identifier>
+            <dc:title>Wood Street</dc:title>
+            <mlo:location>
+              <mlo:street>Wood Street</mlo:street>
+              <mlo:town>Barnet</mlo:town>
+              <mlo:postcode>EN5 4AZ</mlo:postcode>
+            </mlo:location>
+          </provider>
+        </venue>
+        <lsip:flexibleStartDate>False</lsip:flexibleStartDate>
+        <lsip:placesTaken>16</lsip:placesTaken>
       </presentation>
     </course>
     <course>
@@ -44,10 +66,11 @@
         <dc:description>Science</dc:description>
       </dc:subject>
       <dc:title>BTEC Level 2 Extended Certificate in Applied Science</dc:title>
+      <mlo:prerequisite>To get on this course you will be expected to have the equivalent to 4 GCSEs at grades 9-3 including Science, Maths and English. Alternatively, you should have a BTEC Level 1 Diploma in Science or a related subject.    You may be asked to sit a Science test.  </mlo:prerequisite>
       <mlo:qualification>
-        <dc:identifier>6006318X</dc:identifier>
+        <dc:identifier xsi:type="lsip:LAR">6006318X</dc:identifier>
         <dc:title>BTEC First Extended Certificate in Applied Science</dc:title>
-        <mlo:level>2</mlo:level>
+        <mlo:level xsi:type="lsip:NVQ-equivalent">2</mlo:level>
         <xcriTerms:careerOutcome>
           <dc:identifier xsi:type="lsip:SOC2020">2111</dc:identifier>
           <dc:description>Chemical scientists</dc:description>
@@ -71,7 +94,28 @@
       </mlo:qualification>
       <presentation>
         <mlo:start>2022/23</mlo:start>
+        <studyMode>1.0</studyMode>
+        <attendanceMode>1</attendanceMode>
+        <attendancePattern>1.0</attendancePattern>
         <mlo:places>20</mlo:places>
+        <mlo:cost>
+          <lsip:price>1987.0</lsip:price>
+          <lsip:priceCurrency>GBP</lsip:priceCurrency>
+          <dc:description>Tuition fee</dc:description>
+        </mlo:cost>
+        <venue>
+          <provider>
+            <dc:identifier xsi:type="lsip:UKPRN">10000533</dc:identifier>
+            <dc:title>Southgate</dc:title>
+            <mlo:location>
+              <mlo:street>High Street</mlo:street>
+              <mlo:town>Southgate</mlo:town>
+              <mlo:postcode>N14 6BS</mlo:postcode>
+            </mlo:location>
+          </provider>
+        </venue>
+        <lsip:flexibleStartDate>False</lsip:flexibleStartDate>
+        <lsip:placesTaken>16</lsip:placesTaken>
       </presentation>
     </course>
     <course>
@@ -80,10 +124,11 @@
         <dc:description>ICT Practitioners</dc:description>
       </dc:subject>
       <dc:title>L3 Foundation Diploma - Information Technology (Year 1)</dc:title>
+      <mlo:prerequisite>Applicants must have the following qualifications: 5 GCSEs including English and maths at Grade 4/5 (C) or above. We will consider equivalent qualifications.</mlo:prerequisite>
       <mlo:qualification>
-        <dc:identifier>6017576X</dc:identifier>
+        <dc:identifier xsi:type="lsip:LAR">6017576X</dc:identifier>
         <dc:title>BTEC National Foundation Diploma in Information Technology</dc:title>
-        <mlo:level>3</mlo:level>
+        <mlo:level xsi:type="lsip:NVQ-equivalent">3</mlo:level>
         <xcriTerms:careerOutcome>
           <dc:identifier xsi:type="lsip:SOC2020">3132</dc:identifier>
           <dc:description>IT user support technicians</dc:description>
@@ -99,7 +144,28 @@
       </mlo:qualification>
       <presentation>
         <mlo:start>2022/23</mlo:start>
+        <studyMode>1.0</studyMode>
+        <attendanceMode>1</attendanceMode>
+        <attendancePattern>1.0</attendancePattern>
         <mlo:places>32</mlo:places>
+        <mlo:cost>
+          <lsip:price>3345.0</lsip:price>
+          <lsip:priceCurrency>GBP</lsip:priceCurrency>
+          <dc:description>Tuition fee</dc:description>
+        </mlo:cost>
+        <venue>
+          <provider>
+            <dc:identifier xsi:type="lsip:UKPRN">10000533</dc:identifier>
+            <dc:title>Wood Street</dc:title>
+            <mlo:location>
+              <mlo:street>Wood Street</mlo:street>
+              <mlo:town>Barnet</mlo:town>
+              <mlo:postcode>EN5 4AZ</mlo:postcode>
+            </mlo:location>
+          </provider>
+        </venue>
+        <lsip:flexibleStartDate>False</lsip:flexibleStartDate>
+        <lsip:placesTaken>30</lsip:placesTaken>
       </presentation>
     </course>
     <course>
@@ -108,10 +174,11 @@
         <dc:description>Crafts, Creative Arts and Design</dc:description>
       </dc:subject>
       <dc:title>UAL L2 Diploma In Art &amp; Design</dc:title>
+      <mlo:prerequisite>4 GCSEs grade 8/9 - 3 (A*-D), preferably including English; a Functional Skills Level 1 in maths and/or English, or a Level 1 qualification in a related area and a reference from your previous school/college.      </mlo:prerequisite>
       <mlo:qualification>
-        <dc:identifier>6003807X</dc:identifier>
+        <dc:identifier xsi:type="lsip:LAR">6003807X</dc:identifier>
         <dc:title>Diploma in Art and Design</dc:title>
-        <mlo:level>2</mlo:level>
+        <mlo:level xsi:type="lsip:NVQ-equivalent">2</mlo:level>
         <xcriTerms:careerOutcome>
           <dc:identifier xsi:type="lsip:SOC2020">3429</dc:identifier>
           <dc:description>Design occupations n.e.c.</dc:description>
@@ -123,7 +190,28 @@
       </mlo:qualification>
       <presentation>
         <mlo:start>2022/23</mlo:start>
+        <studyMode>1.0</studyMode>
+        <attendanceMode>1</attendanceMode>
+        <attendancePattern>1.0</attendancePattern>
         <mlo:places>36</mlo:places>
+        <mlo:cost>
+          <lsip:price>4170.0</lsip:price>
+          <lsip:priceCurrency>GBP</lsip:priceCurrency>
+          <dc:description>Tuition fee</dc:description>
+        </mlo:cost>
+        <venue>
+          <provider>
+            <dc:identifier xsi:type="lsip:UKPRN">10000533</dc:identifier>
+            <dc:title>Wood Street</dc:title>
+            <mlo:location>
+              <mlo:street>Wood Street</mlo:street>
+              <mlo:town>Barnet</mlo:town>
+              <mlo:postcode>EN5 4AZ</mlo:postcode>
+            </mlo:location>
+          </provider>
+        </venue>
+        <lsip:flexibleStartDate>False</lsip:flexibleStartDate>
+        <lsip:placesTaken>25</lsip:placesTaken>
       </presentation>
     </course>
     <course>
@@ -132,10 +220,11 @@
         <dc:description>Service Enterprises</dc:description>
       </dc:subject>
       <dc:title>Level 3 in Beauty Therapy</dc:title>
+      <mlo:prerequisite>You would need to have a full Level 2 beauty therapy qualification or equivalent.</mlo:prerequisite>
       <mlo:qualification>
-        <dc:identifier>5008964X</dc:identifier>
+        <dc:identifier xsi:type="lsip:LAR">5008964X</dc:identifier>
         <dc:title>Diploma in Beauty Therapy Treatments</dc:title>
-        <mlo:level>3</mlo:level>
+        <mlo:level xsi:type="lsip:NVQ-equivalent">3</mlo:level>
         <xcriTerms:careerOutcome>
           <dc:identifier xsi:type="lsip:SOC2020">6222</dc:identifier>
           <dc:description>Beauticians and related occupations</dc:description>
@@ -147,7 +236,28 @@
       </mlo:qualification>
       <presentation>
         <mlo:start>2022/23</mlo:start>
+        <studyMode>1.0</studyMode>
+        <attendanceMode>1</attendanceMode>
+        <attendancePattern>1.0</attendancePattern>
         <mlo:places>23</mlo:places>
+        <mlo:cost>
+          <lsip:price>3345.0</lsip:price>
+          <lsip:priceCurrency>GBP</lsip:priceCurrency>
+          <dc:description>Tuition fee</dc:description>
+        </mlo:cost>
+        <venue>
+          <provider>
+            <dc:identifier xsi:type="lsip:UKPRN">10000533</dc:identifier>
+            <dc:title>Colindale</dc:title>
+            <mlo:location>
+              <mlo:street>7 Bristol Avenue</mlo:street>
+              <mlo:town>Colindale</mlo:town>
+              <mlo:postcode>NW9 4BR</mlo:postcode>
+            </mlo:location>
+          </provider>
+        </venue>
+        <lsip:flexibleStartDate>False</lsip:flexibleStartDate>
+        <lsip:placesTaken>23</lsip:placesTaken>
       </presentation>
     </course>
   </provider>
