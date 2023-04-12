@@ -41,6 +41,20 @@
         </xs:simpleContent>
     </xs:complexType>
 
+    <xs:complexType name="LAR">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">Qualification aim reference as used by the LAR</xs:documentation>
+        </xs:annotation>
+        <xs:simpleContent>
+            <xs:restriction base="dc:SimpleLiteral">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string"/>
+                </xs:simpleType>
+            </xs:restriction>
+        </xs:simpleContent>
+    </xs:complexType>
+
+
     <xs:complexType name="ESFA">
         <xs:annotation>
             <xs:documentation xml:lang="en">ESFA course identifier</xs:documentation>
@@ -93,7 +107,21 @@
         </xs:simpleContent>
     </xs:complexType>
 
+    <xs:complexType name="NVQ-equivalent">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">Level of qualification, measured by notional equivalence to NVQ level</xs:documentation>
+        </xs:annotation>
+        <xs:simpleContent>
+            <xs:restriction base="dc:SimpleLiteral">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string"/>
+                </xs:simpleType>
+            </xs:restriction>
+        </xs:simpleContent>
+    </xs:complexType>
+
     <xs:element name="flexibleStartDate"/>
     <xs:element name="price"/>
     <xs:element name="priceCurrency"/>
+    <xs:element name="placesTaken"/>
 </xs:schema>
