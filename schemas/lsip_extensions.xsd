@@ -23,8 +23,9 @@
             ========================
             This adds a number of definitions that extend XCRI
 
-            1. Additional identifier types: UKPRN, SOC2020, SSA2, ESFA
-            2. 'flexibleStartDate' element
+            1. Additional identifier types: UKPRN, SOC2020, SSA2, ESFA, LAR, NVQ-Equivalent
+            2. Additional elements: 'flexibleStartDate', 'price', priceCurrency', 'placesTaken',
+               'regions', 'nationalDeliveryIndicator'
         </xs:documentation>
     </xs:annotation>
 
