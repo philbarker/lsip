@@ -1,0 +1,163 @@
+{ 
+    "@context":  [
+        "https://schema.org/",
+        {
+            "ext": "https://example.org/extension/"
+        }
+    ],
+    "@graph":[
+        {
+            "@id": "http://example.edu/Provider/001",
+            "@type": "EducationalOrganization",
+            "name": "Example College",
+            "identifier": {
+                "@type": "PropertyValue",
+                "propertyID": "UKPRN",
+                "value": "123435678"
+            },
+            "address": {
+                "streetAddress": "1 Example Street",
+                "addressLocality": "London",
+                "postalCode": "W1A 1EG"
+            },
+            "url": "https://example.edu/",
+            "makesOffer": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": "https://example.edu/Opportunity/001"
+                }
+            ]
+        },{
+            "@id": "https://example.edu/Opportunity/001",
+            "@type": "Course",
+            "name": "Example Learning Opportunity",
+            "description": "An example learning opportunity.",
+            "ext:assessmentMethod": "Example assessment methods.",
+            "audience": {
+                "@type": "EducationalAudience",
+                "description":  "Example audience information."
+            },
+            "coursePrerequisites": "Example entry requirements.",
+            "ext:equipementRequired": "Example equipement required.",
+            "courseCode": "Dent001",
+            "educationalCredentialAwarded": "http://example.edu/Qualification/Q001",
+            "hasCourseInstance": [
+                "http://example.edu/Presentation/001-2022",
+                "http://example.edu/Presentation/001-2021"
+            ],
+            "educationalAlignment": {
+                "@type": "AlignmentObject",
+                "alignmentType": "educationalSubject",
+                "targetName": "1.1",
+                "targetDescription": "Medicine and dentistry",
+                "educationalFramework": "SSA"
+            },
+            "teaches": [   
+                "An example learning objective",
+                "Another example learning objective"
+            ],
+            "url": "https://example.edu/courses/Dent001",
+            "ext:whereNext": "Example further opportunities."
+        },{
+            "@id": "http://example.edu/Qualification/Q001",
+            "@type": "EducationalOccupationalCredential",
+            "credentialCategory": {
+                "@type": "DefinedTerm",
+                "inDefinedTermSet": {
+                    "name": "UK Credential Categories"
+                },
+                "termCode": "NVQ"
+            },
+            "name": "Example Qualification",
+            "description": "An example qualification.",
+            "offers": {
+                "@type": "Offer",
+                "offeredBy": "https://example.edu/AwardingBody/AB001"
+            },
+            "identifier": {
+                "@type": "PropertyValue",
+                "propertyID": "LearningAimsCode",
+                "value": "123435678"
+            },
+            "educationalLevel": {
+                "@type": "DefinedTerm",
+                "inDefinedTermSet": {
+                    "name": "RQF"
+                },
+                "termCode": "5"
+            },
+            "educationalAlignment": [
+                {
+                    "@type": "AlignmentObject",
+                    "alignmentType": "industry",
+                    "targetName": "86230",
+                    "targetDescription": "Dental practice activities",
+                    "educationalFramework": "UKSIC2007"
+                },{
+                    "@type": "AlignmentObject",
+                    "alignmentType": "occupation",
+                    "targetName": "6133",
+                    "targetDescription": "Dental nurses",
+                    "educationalFramework": "UKSOC2020"
+
+                }
+            ]
+        },{
+            "@id": "http://example.edu/Presentation/001-2022",
+            "ext:attendancePattern": "Daily",
+            "offers": {
+                "price": 500,
+                "priceCurrency": "GBP",
+                "offeredBy": "http://example.edu/Provider/001"
+            },
+            "courseMode":  "Classroom",
+            "identifier": {
+                "@type": "PropertyValue",
+                "propertyID": "ESFAID",
+                "value": "23af-23230ge-etc"
+            },
+            "start": "2022-01-01",
+            "end": "2022-12-30",
+            "duration": "PT1Y",
+            "ext:flexibleStartIndicator": false,
+            "ext:learningMethod": "Example learning methods",
+            "ext:nationalDeliveryIndicator": false,
+            "maximumAttendeeCapacity": 25,
+            "ext:placesTaken": 25,
+            "location": "https://example.org/Places/101"
+        },{
+            "@id": "http://example.edu/Presentation/001-2021",
+            "ext:attendancePattern": "Daily",
+            "offers": {
+                "price": 450,
+                "priceCurrency": "GBP",
+                "offeredBy": "http://example.edu/Provider/001"
+            },
+            "courseMode":  "Classroom",
+            "identifier": {
+                "@type": "PropertyValue",
+                "propertyID": "ESFAID",
+                "value": "42ga-572909a-etc"
+            },
+            "start": "2021-01-01",
+            "end": "2021-12-30",
+            "duration": "PT1Y",
+            "ext:flexibleStartIndicator": false,
+            "ext:learningMethod": "Example learning methods",
+            "ext:nationalDeliveryIndicator": false,
+            "maximumAttendeeCapacity": 20,
+            "ext:placesTaken": 20,
+            "location": "https://example.org/Places/101"
+        },{
+            "@id": "https://example.org/Places/101",
+            "@type": "Place",
+            "name": "Rm101 Example Campus",
+            "locationRef": "Eg101",
+            "address": {
+                "streetAddress": "Room 101, 1 Example Street",
+                "addressLocality": "London",
+                "postalCode": "W1A 1EG"
+            }
+        }
+    ]
+}
