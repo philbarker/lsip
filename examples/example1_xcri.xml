@@ -1,0 +1,73 @@
+<catalog xmlns="http://xcri.org/profiles/1.2/catalog" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xcriTerms="http://xcri.org/profiles/1.2/catalog/terms" xmlns:lsip="https://www.businessldn.co.uk/schemas/lsip" xmlns:mlo="http://purl.org/net/mlo" generated="2013-12-21T17:45:00Z" xsi:schemaLocation="http://xcri.org/profiles/1.2/catalog ../schemas/lsip_xcri_profile.xsd http://xcri.org/profiles/1.2/catalog/terms ../schemas/xcri_cap_terms_1_2.xsd http://purl.org/net/mlo ../schemas/lsip_mlo_profile.xsd http://purl.org/dc/elements/1.1/ ../schemas/dc.xsd https://www.businessldn.co.uk/schemas/lsip ../schemas/lsip_extensions.xsd http://purl.org/dc/terms/ ../schemas/dcterms.xsd">
+  <provider>
+    <dc:identifier xsi:type="lsip:UKPRN">123435678</dc:identifier>
+    <dc:title>Example College</dc:title>
+    <course>
+      <dc:subject>
+        <dc:identifier xsi:type="lsip:SSA2">1.1</dc:identifier>
+        <dc:description>Medicine and dentistry</dc:description>
+      </dc:subject>
+      <dc:title>Example Learning Opportunity</dc:title>
+      <mlo:prerequisite>Example entry requirements</mlo:prerequisite>
+      <mlo:qualification>
+        <dc:identifier xsi:type="lsip:LAR">12345678</dc:identifier>
+        <dc:title>Example Qualification</dc:title>
+        <mlo:level xsi:type="lsip:RQF">5</mlo:level>
+        <xcriTerms:careerOutcome>
+          <dc:identifier xsi:type="lsip:SOC2020">6133</dc:identifier>
+          <dc:description>Dental nurses</dc:description>
+        </xcriTerms:careerOutcome>
+      </mlo:qualification>
+      <presentation>
+        <mlo:start>2022-01-01</mlo:start>
+        <studyMode>1.0</studyMode>
+        <attendanceMode>1</attendanceMode>
+        <attendancePattern>1.0</attendancePattern>
+        <mlo:places>25</mlo:places>
+        <mlo:cost>
+          <lsip:price>500.0</lsip:price>
+          <lsip:priceCurrency>GBP</lsip:priceCurrency>
+          <dc:description>Tuition fee</dc:description>
+        </mlo:cost>
+        <venue>
+          <provider>
+            <dc:identifier xsi:type="lsip:UKPRN">123435678</dc:identifier>
+            <dc:title>Example College</dc:title>
+            <mlo:location>
+              <mlo:street>1 Example Street</mlo:street>
+              <mlo:town>London</mlo:town>
+              <mlo:postcode>W1A 1EG</mlo:postcode>
+            </mlo:location>
+          </provider>
+        </venue>
+        <lsip:flexibleStartDate>False</lsip:flexibleStartDate>
+        <lsip:placesTaken>25</lsip:placesTaken>
+      </presentation>
+      <presentation>
+        <mlo:start>2021-01-01</mlo:start>
+        <studyMode>1.0</studyMode>
+        <attendanceMode>1</attendanceMode>
+        <attendancePattern>1.0</attendancePattern>
+        <mlo:places>20</mlo:places>
+        <mlo:cost>
+          <lsip:price>450.0</lsip:price>
+          <lsip:priceCurrency>GBP</lsip:priceCurrency>
+          <dc:description>Tuition fee</dc:description>
+        </mlo:cost>
+        <venue>
+          <provider>
+            <dc:identifier xsi:type="lsip:UKPRN">123435678</dc:identifier>
+            <dc:title>Example College</dc:title>
+            <mlo:location>
+              <mlo:street>1 Example Street</mlo:street>
+              <mlo:town>London</mlo:town>
+              <mlo:postcode>W1A 1EG</mlo:postcode>
+            </mlo:location>
+          </provider>
+        </venue>
+        <lsip:flexibleStartDate>False</lsip:flexibleStartDate>
+        <lsip:placesTaken>20</lsip:placesTaken>
+      </presentation>
+    </course>
+  </provider>
+</catalog>

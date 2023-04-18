@@ -1,0 +1,109 @@
+{ 
+    "name": {"en": "Example College"},
+    "ukprn": "123435678",
+    "address": {
+        "inSiteReference": "Room 101",
+        "streetAddress": "1 Example Street",
+        "postalTown": "London",
+        "postCode": "W1A 1EG"
+    },
+    "website": "https://example.edu/",
+    "offers": [
+        {
+            "name": {"en": "Example Learning Opportunity"},
+            "description": {"en": "An example learning opportunity."},
+            "assessmentMethod": {"en": "Example assessment methods."},
+            "audience": {"en": "Example audience information"},
+            "entryRequirement": {"en": "Example entry requirements."},
+            "equipementRequired": {"en": "Example equipement required."},
+            "localCode": "Dent001",
+            "subjectArea": {
+                "code": "1.1",
+                "scheme":"SSA",
+                "name": {"en": "Medicine and dentistry"}
+            },
+            "teaches": [   
+                {"en":"An example learning objective"},
+                {"en":"Another example learning objective"}
+            ],
+            "webPage": "https://example.edu/courses/Dent001",
+            "whereNext": {"en":"Example further opportunities."},
+            "preparationFor": {
+                "type": "NVQ",
+                "name": {"en": "Example Qualification"},
+                "description": {"en": "An example qualification."},
+                "learningAimsCode": "12345678",
+                "level": {
+                    "code": "5",
+                    "scheme": "RQF"
+                },
+                "sicCode": {
+                    "code": "86230",
+                    "scheme": "UKSIC2007",
+                    "name": {"en": "Dental practice activities"}
+                },
+                "socCode": {
+                    "code": "6133",
+                    "scheme": "UKSOC2020",
+                    "name": {"en": "Dental nurses"}
+                },
+                "awardedBy": {
+                    "name": "Example Awarding Body",
+                    "abbreviatedName": "EG"
+                }
+            },
+            "presentedAs": [
+                {
+                    "attendancePattern": "Daytime",
+                    "cost": 500,
+                    "costDescription": {"en": "Example cost description"},
+                    "deliveryModel": {"label": "Classroom"},
+                    "esfaID": "23af-23230ge-etc",
+                    "start": "2022-01-01",
+                    "end": "2022-12-30",
+                    "duration": "PT1Y",
+                    "flexibleStartIndicator": false,
+                    "learningMethod": {"en":"Example learning methods"},
+                    "nationalDeliveryIndicator": false,
+                    "placesAvailable": 25,
+                    "placesTaken": 25,
+                    "regionServed": "London",
+                    "studyMode": {"label": "Full time"},
+                    "offeredAt": {
+                        "name": "Rm101 Example Campus",
+                        "locationRef": {"code": "Eg101"},
+                        "inSiteReference": "Room 101",
+                        "streetAddress": "1 Example Street",
+                        "postalTown": "London",
+                        "postCode": "W1A 1EG"
+                    }
+                },{
+                    "id": "http://example.edu/Presentation/001-2001",
+                    "attendancePattern": "Daytime",
+                    "cost": 450,
+                    "costDescription": {"en": "Example cost description"},
+                    "deliveryModel": {"label": "Classroom"},
+                    "esfa": "23af-23230ge-etc",
+                    "start": "2021-01-01",
+                    "end": "2021-12-30",
+                    "duration": "PT1Y",
+                    "flexibleStartIndicator": false,
+                    "learningMethod": {"en":"Example learning methods"},
+                    "nationalDeliveryIndicator": false,
+                    "placesAvailable": 20,
+                    "placesTaken": 20,
+                    "regionServed": "London",
+                    "studyMode": {"label": "Full time"},
+                    "offeredAt": {
+                        "name": "Rm101 Example Campus",
+                        "locationRef": {"code": "Eg101"},
+                        "inSiteReference": "Room 101",
+                        "streetAddress": "1 Example Street",
+                        "postalTown": "London",
+                        "postCode": "W1A 1EG"
+                    }
+               }
+            ]
+        }
+    ]
+}
