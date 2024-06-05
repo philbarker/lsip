@@ -1,185 +1,190 @@
 {
     "@context": [
-        "https://pjjk.net/context/lsip-context.json"
+        "https://pjjk.net/context/lsip-context.json",
+        "https://pjjk.net/context/lsip-quals.json"
     ],
-    "data": [
-        {
-            "id": "http://example.edu/Provider/001",
-            "type": "CredentialOrganization",
-            "name": "Example College",
-            "identifier": {
-                "type": "IdentifierValue",
-                "identifierTypeName": "UKPRN",
-                "identifierValueCode": "123435678"
-            },
-            "address": {
-                "type": "Place",
-                "streetAddress":  "1 Example Street",
-                "addressLocality":  "London",
-                "postalCode": "W1A 1EG"
-            },
-            "subjectWebpage": "https://example.edu/",
-            "offers": [
-                "https://example.edu/Opportunity/001"
-            ]
-        },
-        {
-            "id": "https://example.edu/Opportunity/001",
-            "type": "LearningOpportunityProfile",
-            "name":  "Example Learning Opportunity",
-            "description":  "An example learning opportunity.",
-            "assessmentMethodDescription":  "Example assessment methods.",
-            "audience": {
-                "type": "EducationalAudience",
-                "description": "Example audience information."
-            },
-            "entryCondition": {
-                "type": "ConditionProfile",
-                "description":  "An example learning opportunity"
-            },
-            "equipementRequired":  "Example equipement required.",
-            "codedNotation": "Dent001",
-            "isPreparationFor": "http://example.edu/Qualification/Q001",
-            "hasOffering": [
-                "http://example.edu/Presentation/001-2022",
-                "http://example.edu/Presentation/001-2021"
-            ],
-            "subject": {
-                "type": "Concept",
-                "notation": "1.1",
-                "prefLabel": "Medicine and dentistry",
-                "inScheme": "SSA"
-            },
-            "teaches": [
-                {
-                    "competencyText":  "An example learning objective"
+    "data": {
+        "Providers": [
+            {
+                "id": "http://example.edu/Provider/001",
+                "name": "Example College",
+                "identifier": {
+                    "type": "IdentifierValue",
+                    "identifierTypeName": "UKPRN",
+                    "identifierValueCode": "123435678"
                 },
-                {
-                    "competencyText":  "Another example learning objective"
-                }
-            ],
-            "subjectWebpage": "https://example.edu/courses/Dent001",
-            "whereNext":  "Example further opportunities."
-        },
-        {
-            "id": "http://example.edu/Qualification/Q001",
-            "type": [
-                "Credential",
-                "NVQ"
-            ],
-            "name":  "Example Qualification",
-            "description":  "An example qualification.",
-            "offeredBy": "https://example.edu/AwardingBody/AB001",
-            "identifier": {
-                "type": "IdentifierValue",
-                "identifierTypeName":  "LearningAimsCode",
-                "identifierValueCode": "123435678"
-            },
-            "educationalLevel": {
-                "type": "DefinedTerm",
-                "inDefinedTermSet": {
-                    "name": "RQF"
+                "address": {
+                    "type": "Place",
+                    "streetAddress": "1 Example Street",
+                    "addressLocality": "London",
+                    "postalCode": "W1A 1EG"
                 },
-                "termCode": "5"
-            },
-            "industryType": {
-                "type": "CredentialAlignmentObject",
-                "alignmentType": "industry",
-                "codedNotation": "86230",
-                "targetNodeName":  "Dental practice activities",
-                "framework": "UKSIC2007",
-                "frameworkName":  "UK SIC 2007"
-            },
-            "occupationType": {
-                "type": "CredentialAlignmentObject",
-                "alignmentType": "occupation",
-                "codedNotation": "6133",
-                "targetNodeName":  "Dental nurses",
-                "framework": "UKSOC2020",
-                "frameworkName":  "UK SOC 2020"
+                "subjectWebpage": "https://example.edu/",
+                "offers": [
+                    "https://example.edu/Opportunity/001"
+                ]
             }
-        },
-        {
-            "id": "http://example.edu/Presentation/001-2022",
-            "type": "ScheduledOffering",
-            "scheduleTimingType": {
-                "targetNode": "Weekdays"
+        ],
+        "Courses": [
+            {
+                "id": "https://example.edu/Opportunity/001",
+                "name": "Example Learning Opportunity",
+                "description": "An example learning opportunity.",
+                "assessmentMethodDescription": "Example assessment methods.",
+                "audience": {
+                    "type": "EducationalAudience",
+                    "description": "Example audience information."
+                },
+                "entryCondition": {
+                    "type": "ConditionProfile",
+                    "description": "An example learning opportunity"
+                },
+                "equipementRequired": "Example equipement required.",
+                "codedNotation": "Dent001",
+                "isPreparationFor": "http://example.edu/Qualification/Q001",
+                "hasOffering": [
+                    "http://example.edu/Presentation/001-2022",
+                    "http://example.edu/Presentation/001-2021"
+                ],
+                "subject": {
+                    "type": "Concept",
+                    "notation": "1.1",
+                    "prefLabel": "Medicine and dentistry",
+                    "inScheme": "SSA"
+                },
+                "teaches": [
+                    {
+                        "competencyText": "An example learning objective"
+                    },
+                    {
+                        "competencyText": "Another example learning objective"
+                    }
+                ],
+                "subjectWebpage": "https://example.edu/courses/Dent001",
+                "whereNext": "Example further opportunities."
+            }
+        ],
+        "Qualifications": [
+            {
+                "id": "http://example.edu/Qualification/Q001",
+                "type": [
+                    "NVQ"
+                ],
+                "name": "Example Qualification",
+                "description": "An example qualification.",
+                "offeredBy": "https://example.edu/AwardingBody/AB001",
+                "identifier": {
+                    "type": "IdentifierValue",
+                    "identifierTypeName": "LearningAimsCode",
+                    "identifierValueCode": "123435678"
+                },
+                "educationalLevel": {
+                    "type": "DefinedTerm",
+                    "inDefinedTermSet": {
+                        "name": "RQF"
+                    },
+                    "termCode": "5"
+                },
+                "industryType": {
+                    "type": "CredentialAlignmentObject",
+                    "alignmentType": "industry",
+                    "codedNotation": "86230",
+                    "targetNodeName": "Dental practice activities",
+                    "framework": "UKSIC2007",
+                    "frameworkName": "UK SIC 2007"
+                },
+                "occupationType": {
+                    "type": "CredentialAlignmentObject",
+                    "alignmentType": "occupation",
+                    "codedNotation": "6133",
+                    "targetNodeName": "Dental nurses",
+                    "framework": "UKSOC2020",
+                    "frameworkName": "UK SOC 2020"
+                }
+            }
+        ],
+        "Offerings": [
+            {
+                "id": "http://example.edu/Presentation/001-2022",
+                "scheduleTimingType": {
+                    "targetNode": "Weekdays"
+                },
+                "scheduleFrequencyType": {
+                    "targetNode": "MultiplePerWeek"
+                },
+                "estimatedCost": {
+                    "type": "CostProfile",
+                    "price": 500,
+                    "currency": "GBP"
+                },
+                "deliveryTypeDescription": "Classroom",
+                "identifier": {
+                    "type": "IdentifierValue",
+                    "identifierTypeName": "ESFAID",
+                    "identifierValueCode": "23af-23230ge-etc"
+                },
+                "start": "2022-01-01",
+                "end": "2022-12-30",
+                "estimatedDuration": {
+                    "type": "DurationProfile",
+                    "exactDuration": "PT1Y"
+                },
+                "offerFrequencyType": {
+                    "targetNode": "Annually"
+                },
+                "learningMethodDescription": "Example learning methods",
+                "nationalDeliveryIndicator": false,
+                "maximumAttendeeCapacity": 25,
+                "placesTaken": 25,
+                "availableAt": "https://example.org/Places/101"
             },
-            "scheduleFrequencyType": {
-                "targetNode": "MultiplePerWeek"
-            },
-            "estimatedCost": {
-                "type": "CostProfile",
-                "price": 500,
-                "currency": "GBP"
-            },
-            "deliveryTypeDescription": "Classroom",
-            "identifier": {
-                "type": "IdentifierValue",
-                "identifierTypeName": "ESFAID",
-                "identifierValueCode": "23af-23230ge-etc"
-            },
-            "start": "2022-01-01",
-            "end": "2022-12-30",
-            "estimatedDuration": {
-                "type": "DurationProfile",
-                "exactDuration": "PT1Y"
-            },
-            "offerFrequencyType": {
-                "targetNode": "Annually"
-            },
-            "learningMethodDescription": "Example learning methods",
-            "nationalDeliveryIndicator": false,
-            "maximumAttendeeCapacity": 25,
-            "placesTaken": 25,
-            "availableAt": "https://example.org/Places/101"
-        },
-        {
-            "id": "http://example.edu/Presentation/001-2021",
-            "type": "ScheduledOffering",
-            "scheduleTimingType": {
-                "targetNode": "Weekdays"
-            },
-            "scheduleFrequencyType": {
-                "targetNode": "MultiplePerWeek"
-            },
-            "estimatedCost": {
-                "type": "CostProfile",
-                "price": 450,
-                "currency": "GBP"
-            },
-            "deliveryTypeDescription": "Classroom",
-            "identifier": {
-                "type": "IdentifierValue",
-                "identifierTypeName": "ESFAID",
-                "identifierValueCode": "42ga-572909a-etc"
-            },
-            "start": "2021-01-01",
-            "end": "2021-12-30",
-            "estimatedDuration": {
-                "type": "DurationProfile",
-                "exactDuration": "PT1Y"
-            },
-            "offerFrequencyType": {
-                "targetNode": "scheduleFrequency:Annually"
-            },
-            "learningMethodDescription": "Example learning methods",
-            "nationalDeliveryIndicator": false,
-            "maximumAttendeeCapacity": 20,
-            "placesTaken": 20,
-            "availableAt": "https://example.org/Places/101"
-        },
-        {
-            "id": "https://example.org/Places/101",
-            "type": "Place",
-            "name": "Rm101 Example Campus",
-            "identifier": {
-                "type": "IdentifierValue",
-                "identifierValueCode": "Eg101"
-            },
-            "streetAddress": "Room 101, 1 Example Street",
-            "addressLocality": "London",
-            "postalCode": "W1A 1EG"
-        }
-    ]
+            {
+                "id": "http://example.edu/Presentation/001-2021",
+                "scheduleTimingType": {
+                    "targetNode": "Weekdays"
+                },
+                "scheduleFrequencyType": {
+                    "targetNode": "MultiplePerWeek"
+                },
+                "estimatedCost": {
+                    "type": "CostProfile",
+                    "price": 450,
+                    "currency": "GBP"
+                },
+                "deliveryTypeDescription": "Classroom",
+                "identifier": {
+                    "type": "IdentifierValue",
+                    "identifierTypeName": "ESFAID",
+                    "identifierValueCode": "42ga-572909a-etc"
+                },
+                "start": "2021-01-01",
+                "end": "2021-12-30",
+                "estimatedDuration": {
+                    "type": "DurationProfile",
+                    "exactDuration": "PT1Y"
+                },
+                "offerFrequencyType": {
+                    "targetNode": "scheduleFrequency:Annually"
+                },
+                "learningMethodDescription": "Example learning methods",
+                "nationalDeliveryIndicator": false,
+                "maximumAttendeeCapacity": 20,
+                "placesTaken": 20,
+                "availableAt": "https://example.org/Places/101"
+            }
+        ],
+        "Locations": [
+            {
+                "id": "https://example.org/Places/101",
+                "name": "Rm101 Example Campus",
+                "identifier": {
+                    "type": "IdentifierValue",
+                    "identifierValueCode": "Eg101"
+                },
+                "streetAddress": "Room 101, 1 Example Street",
+                "addressLocality": "London",
+                "postalCode": "W1A 1EG"
+            }
+        ]
+    }
 }
