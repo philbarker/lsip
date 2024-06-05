@@ -6,7 +6,7 @@
     "data": {
         "Providers": [
             {
-                "id": "http://example.edu/Provider/001",
+                "id": "001",
                 "name": "Example College",
                 "identifier": {
                     "type": "IdentifierValue",
@@ -21,13 +21,13 @@
                 },
                 "subjectWebpage": "https://example.edu/",
                 "offers": [
-                    "https://example.edu/Opportunity/001"
+                    "001"
                 ]
             }
         ],
         "Courses": [
             {
-                "id": "https://example.edu/Opportunity/001",
+                "id": "001",
                 "name": "Example Learning Opportunity",
                 "description": "An example learning opportunity.",
                 "assessmentMethodDescription": "Example assessment methods.",
@@ -41,10 +41,10 @@
                 },
                 "equipementRequired": "Example equipement required.",
                 "codedNotation": "Dent001",
-                "isPreparationFor": "http://example.edu/Qualification/Q001",
+                "isPreparationFor": "Q001",
                 "hasOffering": [
-                    "http://example.edu/Presentation/001-2022",
-                    "http://example.edu/Presentation/001-2021"
+                    "001-2022",
+                    "001-2021"
                 ],
                 "subject": {
                     "type": "Concept",
@@ -66,13 +66,13 @@
         ],
         "Qualifications": [
             {
-                "id": "http://example.edu/Qualification/Q001",
+                "id": "Q001",
                 "type": [
                     "NVQ"
                 ],
                 "name": "Example Qualification",
                 "description": "An example qualification.",
-                "offeredBy": "https://example.edu/AwardingBody/AB001",
+                "offeredBy": "AB001",
                 "identifier": {
                     "type": "IdentifierValue",
                     "identifierTypeName": "LearningAimsCode",
@@ -103,9 +103,9 @@
                 }
             }
         ],
-        "Offerings": [
+        "Presentations": [
             {
-                "id": "http://example.edu/Presentation/001-2022",
+                "id": "001-2022",
                 "scheduleTimingType": {
                     "targetNode": "Weekdays"
                 },
@@ -136,10 +136,10 @@
                 "nationalDeliveryIndicator": false,
                 "maximumAttendeeCapacity": 25,
                 "placesTaken": 25,
-                "availableAt": "https://example.org/Places/101"
+                "availableAt": "101"
             },
             {
-                "id": "http://example.edu/Presentation/001-2021",
+                "id": "001-2021",
                 "scheduleTimingType": {
                     "targetNode": "Weekdays"
                 },
@@ -170,12 +170,12 @@
                 "nationalDeliveryIndicator": false,
                 "maximumAttendeeCapacity": 20,
                 "placesTaken": 20,
-                "availableAt": "https://example.org/Places/101"
+                "availableAt": "101"
             }
         ],
         "Locations": [
             {
-                "id": "https://example.org/Places/101",
+                "id": "101",
                 "name": "Rm101 Example Campus",
                 "identifier": {
                     "type": "IdentifierValue",

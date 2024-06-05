@@ -16,11 +16,36 @@
             "@id": "@graph",
             "@container": "@type"
         },
-        "Courses": "ceterms:LearningOpportunityProfile",
-        "Providers": "ceterms:CredentialOrganization",
-        "Qualifications": "ceterms:Credential",
-        "Offerings": "ceterms:ScheduledOffering",
-        "Locations": "ceterms:Place",
+        "Courses": {
+            "@id": "ceterms:LearningOpportunityProfile",
+            "@context": {
+                "@base": "https://example.edu/Opportunity/"
+            }
+        },
+        "Providers": {
+            "@id": "ceterms:CredentialOrganization",
+            "@context": {
+                "@base": "https://example.edu/Provider/"
+            }
+        },
+        "Qualifications": {
+            "@id": "ceterms:Credential",
+            "@context": {
+                "@base": "https://example.edu/Qualification/"
+            }
+        },
+        "Presentations": {
+            "@id": "ceterms:ScheduledOffering",
+            "@context": {
+                "@base": "https://example.edu/Presentation/"
+            }
+        },
+        "Locations": {
+            "@id": "ceterms:Place",
+            "@context": {
+                "@base": "https://example.edu/Location/"
+            }
+        },
         "ConditionProfile": "ceterms:ConditionProfile",
         "CostProfile": "ceterms:CostProfile",
         "Credential": "ceterms:Credential",
@@ -66,7 +91,10 @@
         },
         "availableAt": {
             "@id": "ceterms:availableAt",
-            "@type": "@id"
+            "@type": "@id",
+            "@context": {
+                "@base": "https://example.org/Location/"
+            }
         },
         "currency": {
             "@id": "ceterms:currency",
@@ -124,7 +152,10 @@
         },
         "hasOffering": {
             "@id": "ceterms:hasOffering",
-            "@type": "@id"
+            "@type": "@id",
+            "@context": {
+                "@base": "http://example.edu/Presentation/"
+            }
         },
         "identifier": {
             "@id": "ceterms:identifier",
@@ -144,7 +175,10 @@
         },
         "isPreparationFor": {
             "@id": "ceterms:isPreparationFor",
-            "@type": "@id"
+            "@type": "@id",
+            "@context": {
+                "@base": "https://example.edu/Qualification/"
+            }
         },
         "learningMethodDescription": {
             "@id": "ceterms:learningMethodDescription",
@@ -167,7 +201,10 @@
         },
         "offeredBy": {
             "@id": "ceterms:offeredBy",
-            "@type": "@id"
+            "@type": "@id",
+            "@context": {
+                "@base": "https://example.edu/AwardingBody/"
+            }
         },
         "offerFrequencyType": {
             "@id": "ceterms:offerFrequencyType",
@@ -178,7 +215,10 @@
         },
         "offers": {
             "@id": "ceterms:offers",
-            "@type": "@id"
+            "@type": "@id",
+            "@context": {
+                "@base": "https://example.edu/Opportunity/"
+            }
         },
         "placesTaken": {
             "@id": "lsip:placesTaken",
