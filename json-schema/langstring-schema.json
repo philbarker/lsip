@@ -1,0 +1,21 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "langstring-schema.json",
+    "description": "Draft schema for validating LSIP provider descriptions with no extensions.",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "en": {
+            "type": "string"
+        },
+        "cy": {
+            "type": "string"
+        },
+        "ar": {
+            "type": "string"
+        },
+        "pa": {
+            "type": "string"
+        }
+    }
+}

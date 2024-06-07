@@ -1,7 +1,0 @@
-{
-  "@context": {
-    "@version": 1.1,
-    "lsip-qual": "https://example.org/lsip/quals/",
-    "NVQ": "lsip-qual:NVQ"
-  }
-}

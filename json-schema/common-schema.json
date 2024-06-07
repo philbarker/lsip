@@ -1,0 +1,21 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "common-schema.json",
+    "description": "Draft schema for validating LSIP property values that are used in several places.",
+    "$defs":{
+        "id": {
+            "$anchor": "id",
+            "type": "string"
+        },
+        "name": {
+            "$anchor": "name",
+            "type": "string"
+        },
+        "description": {
+            "$anchor": "description",
+            "type": "string"
+        }
+
+    }
+
+}

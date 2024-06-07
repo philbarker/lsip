@@ -1,0 +1,66 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "location-schema.json",
+    "description": "Draft schema for validating LSIP location descriptions such as addresses, with no extensions.",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "addressLocality",
+        "addressRegion"
+    ],
+    "properties": {
+        "id": {
+            "$ref": "common-schema.json#id"
+        },
+        "type": {
+            "enum": ["Place"]
+        },
+        "name": {
+            "$ref": "common-schema.json#name"
+        },
+        "identifier":  {
+            "$ref": "#locid-schema"
+        },
+        "streetAddress":  {
+            "type": "string"
+        },
+        "addressLocality":  {
+            "type": "string"
+        },
+        "addressRegion":  {
+            "type": "string"
+        },
+        "postalCode":  {
+            "type": "string"
+        },
+        "addressCountry": {
+            "type": "string"
+        }
+    },
+    "$defs": {
+        "locid-identifier": {
+            "$anchor": "locid-schema",
+            "type": "object",
+            "required": [
+                "type",
+                "identifierTypeName",
+                "identifierValueCode"
+            ],
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "enum": [
+                        "IdentifierValue"
+                    ]
+                },
+                "identifierTypeName": {
+                    "type": "string"
+                },
+                "identifierValueCode": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+
+}

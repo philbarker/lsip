@@ -1,188 +1,194 @@
-{ 
-    "@context":  [
-        "https://schema.org/docs/jsonldcontext.json",
-        "http://credreg.net/ctdl/schema/context/json",
-        {
-            "ext": "https://example.org/extension/"
-        }
+{
+    "$schema": "../json-schema/top-schema.json",
+    "@context": [
+        "https://pjjk.net/context/dfcm-context.json",
+        "https://pjjk.net/context/dfcm-quals.json"
     ],
-    "@graph":[
-        {
-            "@id": "http://example.edu/Provider/001",
-            "@type": "ceterms:CredentialOrganization",
-            "ceterms:name": {"en": "Example College"},
-            "ceterms:identifier": {
-                "@type": "ceterms:IdentifierValue",
-                "ceterms:identifierTypeName": "UKPRN",
-                "ceterms:identifierValueCode": "123435678"
-            },
-            "ceterms:address": {
-                "@type": "ceterms:Place",
-                "ceterms:streetAddress": {"en": "1 Example Street"},
-                "ceterms:addressLocality": {"en": "London"},
-                "ceterms:postalCode": "W1A 1EG"
-            },
-            "ceterms:subjectWebpage": "https://example.edu/",
-            "ceterms:offers": [
-                "https://example.edu/Opportunity/001"
-            ]
-        },{
-            "@id": "https://example.edu/Opportunity/001",
-            "@type": "ceterms:LearningOpportunityProfile",
-            "ceterms:name": {"en": "Example Learning Opportunity"},
-            "ceterms:description": {"en": "An example learning opportunity."},
-            "ceterms:assessmentMethodDescription": {
-                "en": "Example assessment methods."
-            },
-            "schema:audience": {
-                "@type": "schema:EducationalAudience",
-                "schema:description":  "Example audience information."
-            },
-            "ceterms:entryCondition": {
-                "@type": "ceterms:ConditionProfile",
-                "ceterms:description": {"en": "An example learning opportunity"}
-            },
-            "ext:equipementRequired": {"en": "Example equipement required."},
-            "ceterms:codedNotation": "Dent001",
-            "ceterms:isPreparationFor": "http://example.edu/Qualification/Q001",
-            "ceterms:hasOffering": [
-                "http://example.edu/Presentation/001-2022",
-                "http://example.edu/Presentation/001-2021"
-            ],
-            "ceterms:subject": {
-                "@type": "skos:Concept",
-                "skos:notation": "1.1",
-                "skos:prefLabel": "Medicine and dentistry",
-                "skos:inScheme": "http://example.org/lsip-schemes/SSA"
-            },
-            "ceterms:teaches": [{
-                "ceasn:competencyText": 
-                    {"en": "An example learning objective"}
-                },{
-                "ceasn:competencyText": 
-                    {"en": "Another example learning objective"}
-                }
-            ],
-            "ceterms:subjectWebpage": "https://example.edu/courses/Dent001",
-            "ext:whereNext": {"en": "Example further opportunities."}
-        },{
-            "@id": "http://example.edu/Qualification/Q001",
-            "@type": [
-                "ceterms:EducationalOccupationalCredential",
-                "https://example.org/lsip-types/NVQ" 
-            ],
-            "ceterms:name": {"en": "Example Qualification"},
-            "ceterms:description": {"en": "An example qualification."},
-            "ceterms:offeredBy": "https://example.edu/AwardingBody/AB001",
-            "ceterms:identifier": {
-                "@type": "ceterms:IdentifierValue",
-                "ceterms:identifierTypeName": {"en": "LearningAimsCode"},
-                "ceterms:identifierValueCode": "123435678"
-            },
-            "schema:educationalLevel": {
-                "@type": "schema:DefinedTerm",
-                "schema:inDefinedTermSet": {
-                    "schema:name": "RQF"
+    "data": {
+        "Providers": [
+            {
+                "id": "123435678",
+                "name": "Example College",
+                "identifier": {
+                    "type": "IdentifierValue",
+                    "identifierTypeName": "UKPRN",
+                    "identifierValueCode": "12345678"
                 },
-                "schema:termCode": "5"
-            },
-            "ceterms:industryType":{
-                "@type": "ceterms:CredentialAlignmentObject",
-                "ceterms:alignmentType": "industry",
-                "ceterms:codedNotation": "86230",
-                "ceterms:targetNodeName": {
-                    "en": "Dental practice activities"
+                "address": {
+                    "type": "Place",
+                    "streetAddress": "1 Example Street",
+                    "addressRegion": "West London",
+                    "addressLocality": "London",
+                    "postalCode": "W1A 1EG"
                 },
-                "ceterms:framework": "https://example.org/lsip-schemes/UKSIC2007",
-                "ceterms:frameworkName": {
-                    "en": "UK SIC 2007"
-                }
-            },
-            "ceterms:occupationType": {
-                    "@type": "ceterms:CredentialAlignmentObject",
-                    "ceterms:alignmentType": "occupation",
-                    "ceterms:codedNotation": "6133",
-                    "ceterms:targetNodeName": {
-                        "en": "Dental nurses"
+                "subjectWebpage": "https://example.edu/",
+                "offers": [
+                    "001"
+                ]
+            }
+        ],
+        "Courses": [
+            {
+                "id": "001",
+                "name": "Example Learning Opportunity",
+                "description": "An example learning opportunity.",
+                "assessmentMethodDescription": "Example assessment methods.",
+                "audience": {
+                    "type": "EducationalAudience",
+                    "description": "Example audience information."
+                },
+                "entryCondition": {
+                    "type": "ConditionProfile",
+                    "description": "An example learning opportunity"
+                },
+                "equipmentRequired": "Example equipement required.",
+                "codedNotation": "Dent001",
+                "isPreparationFor": "Q001",
+                "hasOffering": [
+                    "001-2022",
+                    "001-2021"
+                ],
+                "subject": {
+                    "type": "Concept",
+                    "notation": "1.1",
+                    "prefLabel": "Medicine and dentistry",
+                    "inScheme": "SSA"
+                },
+                "teaches": [
+                    {
+                        "competencyText": "An example learning objective"
                     },
-                    "ceterms:framework": "https://example.org/lsip-schemes/UKSOC2020",
-                    "ceterms:frameworkName": {
-                        "en": "UK SOC 2020"
+                    {
+                        "competencyText": "Another example learning objective"
                     }
+                ],
+                "subjectWebpage": "https://example.edu/courses/Dent001",
+                "whereNext": "Example further opportunities."
+            }
+        ],
+        "Qualifications": [
+            {
+                "id": "Q001",
+                "type": [
+                    "NVQ"
+                ],
+                "name": "Example Qualification",
+                "description": "An example qualification.",
+                "offeredBy": "AB001",
+                "identifier": {
+                    "type": "IdentifierValue",
+                    "identifierTypeName": "LearningAimsCode",
+                    "identifierValueCode": "123435678"
+                },
+                "educationalLevel": {
+                    "type": "DefinedTerm",
+                    "inDefinedTermSet": {
+                        "name": "RQF"
+                    },
+                    "termCode": "5"
+                },
+                "industryType": {
+                    "type": "CredentialAlignmentObject",
+                    "alignmentType": "industry",
+                    "codedNotation": "86230",
+                    "targetNodeName": "Dental practice activities",
+                    "framework": "UKSIC2007",
+                    "frameworkName": "UK SIC 2007"
+                },
+                "occupationType": {
+                    "type": "CredentialAlignmentObject",
+                    "alignmentType": "occupation",
+                    "codedNotation": "6133",
+                    "targetNodeName": "Dental nurses",
+                    "framework": "UKSOC2020",
+                    "frameworkName": "UK SOC 2020"
                 }
-        },{
-            "@id": "http://example.edu/Presentation/001-2022",
-            "@type": "ceterms:ScheduledOffering",
-            "ceterms:scheduleTimingType": 
-                {"ceterms:targetNode": "scheduleTiming:Weekdays"},
-            "ceterms:scheduleFrequencyType": 
-                {"ceterms:targetNode": "scheduleFrequency:MultiplePerWeek"},
-            "ceterms:estimatedCost": {
-                "@type": "ceterms:CostProfile",
-                "ceterms:price": 500,
-                "ceterms:currency": "GBP"
+            }
+        ],
+        "Presentations": [
+            {
+                "id": "001-2022",
+                "scheduleTimingType": {
+                    "targetNode": "Weekdays"
+                },
+                "scheduleFrequencyType": {
+                    "targetNode": "MultiplePerWeek"
+                },
+                "estimatedCost": {
+                    "type": "CostProfile",
+                    "price": 500,
+                    "currency": "GBP"
+                },
+                "deliveryTypeDescription": "Classroom",
+                "identifier": {
+                    "type": "IdentifierValue",
+                    "identifierTypeName": "ESFAID",
+                    "identifierValueCode": "23af-23230ge-etc"
+                },
+                "start": "2022-01-01",
+                "end": "2022-12-30",
+                "estimatedDuration": {
+                    "type": "DurationProfile",
+                    "exactDuration": "PT1Y"
+                },
+                "offerFrequencyType": {
+                    "targetNode": "Annually"
+                },
+                "learningMethodDescription": "Example learning methods",
+                "nationalDeliveryIndicator": false,
+                "maximumAttendeeCapacity": 25,
+                "placesTaken": 25,
+                "availableAt": "101"
             },
-            "ceterms:deliveryTypeDescription": "Classroom",
-            "ceterms:identifier": {
-                "@type": "ceterms:IdentifierValue",
-                "ceterms:identifierTypeName": "ESFAID",
-                "ceterms:identifierValueCode": "23af-23230ge-etc"
-            },
-            "schema:start": "2022-01-01",
-            "schema:end": "2022-12-30",
-            "ceterms:estimatedDuration": {
-                "@type": "ceterms:DurationProfile",
-                "ceterms:exactDuration": "PT1Y"
-            },
-            "ceterms:offerFrequencyType":
-                {"ceterms:targetNode": "scheduleFrequency:Annually"},
-            "ceterms:learningMethodDescription": "Example learning methods",
-            "ext:nationalDeliveryIndicator": false,
-            "schema:maximumAttendeeCapacity": 25,
-            "ext:placesTaken": 25,
-            "ceterms:availableAt": "https://example.org/Places/101"
-        },{
-            "@id": "http://example.edu/Presentation/001-2021",
-            "@type": "ceterms:ScheduledOffering",
-            "ceterms:scheduleTimingType": 
-                {"ceterms:targetNode": "scheduleTiming:Weekdays"},
-            "ceterms:scheduleFrequencyType": 
-                {"ceterms:targetNode": "scheduleFrequency:MultiplePerWeek"},
-            "ceterms:estimatedCost": {
-                "@type": "ceterms:CostProfile",
-                "ceterms:price": 450,
-                "ceterms:currency": "GBP"
-            },
-            "ceterms:deliveryTypeDescription": "Classroom",
-            "ceterms:identifier": {
-                "@type": "ceterms:IdentifierValue",
-                "ceterms:identifierTypeName": "ESFAID",
-                "ceterms:identifierValueCode": "42ga-572909a-etc"
-            },
-            "schema:start": "2021-01-01",
-            "schema:end": "2021-12-30",
-            "ceterms:estimatedDuration": {
-                "@type": "ceterms:DurationProfile",
-                "ceterms:exactDuration": "PT1Y"
-            },
-            "ceterms:offerFrequencyType":
-                {"ceterms:targetNode": "scheduleFrequency:Annually"},
-            "ceterms:learningMethodDescription": "Example learning methods",
-            "ext:nationalDeliveryIndicator": false,
-            "schema:maximumAttendeeCapacity": 20,
-            "ext:placesTaken": 20,
-            "ceterms:availableAt": "https://example.org/Places/101"
-        },{
-            "@id": "https://example.org/Places/101",
-            "@type": "ceterms:Place",
-            "ceterms:name": "Rm101 Example Campus",
-            "ceterms:identifier": {
-                "@type": "ceterms:IdentifierValue",
-                "ceterms:identifierValueCode": "Eg101"
-            },
-            "ceterms:streetAddress": {"en": "Room 101, 1 Example Street"},
-            "ceterms:addressLocality": {"en": "London"},
-            "ceterms:postalCode": "W1A 1EG"
-        }
-    ]
+            {
+                "id": "001-2021",
+                "scheduleTimingType": {
+                    "targetNode": "Weekdays"
+                },
+                "scheduleFrequencyType": {
+                    "targetNode": "MultiplePerWeek"
+                },
+                "estimatedCost": {
+                    "type": "CostProfile",
+                    "price": 450,
+                    "currency": "GBP"
+                },
+                "deliveryTypeDescription": "Classroom",
+                "identifier": {
+                    "type": "IdentifierValue",
+                    "identifierTypeName": "ESFAID",
+                    "identifierValueCode": "42ga-572909a-etc"
+                },
+                "start": "2021-01-01",
+                "end": "2021-12-30",
+                "estimatedDuration": {
+                    "type": "DurationProfile",
+                    "exactDuration": "PT1Y"
+                },
+                "offerFrequencyType": {
+                    "targetNode": "scheduleFrequency:Annually"
+                },
+                "learningMethodDescription": "Example learning methods",
+                "nationalDeliveryIndicator": false,
+                "maximumAttendeeCapacity": 20,
+                "placesTaken": 20,
+                "availableAt": "101"
+            }
+        ],
+        "Locations": [
+            {
+                "id": "101",
+                "name": "Rm101 Example Campus",
+                "identifier": {
+                    "type": "IdentifierValue",
+                    "identifierTypeName": "Example",
+                    "identifierValueCode": "Eg101"
+                },
+                "streetAddress": "Room 101, 1 Example Street",
+                "addressRegion": "West London",
+                "addressLocality": "London",
+                "postalCode": "W1A 1EG"
+            }
+        ]
+    }
 }

@@ -1,0 +1,47 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "provider-schema.json",
+    "description": "Draft schema for validating LSIP provider descriptions with no extensions.",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "name",
+        "id",
+        "description",
+        "assessmentMethodDescription",
+        "audience",
+        "entryCondition",
+        "equipmentRequired",
+        "codedNotation",
+        "isPreparationFor",
+        "hasOffering",
+        "subject",
+        "subjectWebpage",
+        "teaches",
+        "whereNext"
+    ],
+    "properties": {
+        "id": {
+            "$ref": "common-schema.json#id"
+        },
+        "name": {
+            "$ref": "common-schema.json#name"
+        },
+        "description": {
+            "$ref": "common-schema.json#description"
+        },
+        "assessmentMethodDescription": {
+            "$ref": "common-schema.json#description"
+        },
+        "audience": {},
+        "entryCondition": {},
+        "equipmentRequired": {},
+        "codedNotation": {},
+        "isPreparationFor": {},
+        "hasOffering": {},
+        "subject": {},
+        "subjectWebpage": {},
+        "teaches": {},
+        "whereNext": {}
+    }
+}

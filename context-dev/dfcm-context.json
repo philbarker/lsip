@@ -3,8 +3,8 @@
         "@version": 1.1,
         "@language": "en",
         "ceterms": "https://purl.org/ctdl/terms/",
-        "lsip": "https://example.org/lsip/terms/",
-        "lsip-schemes": "http://example.org/lsip-schemes/",
+        "dfcm": "https://example.org/dfcm/terms/",
+        "dfcm-schemes": "http://example.org/dfcm-schemes/",
         "sdo": "https://schema.org/",
         "xsd": "http://www.w3.org/2001/XMLSchema#",
         "id": "@id",
@@ -131,7 +131,7 @@
             "@type": "@id"
         },
         "equipementRequired": {
-            "@id": "lsip:equipmentRequired",
+            "@id": "dfcm:equipmentRequired",
             "@container": "@language"
         },
         "estimatedCost": {
@@ -193,7 +193,7 @@
             "@container": "@language"
         },
         "nationalDeliveryIndicator": {
-            "@id": "lsip:nationalDeliveryIndicator"
+            "@id": "dfcm:nationalDeliveryIndicator"
         },
         "occupationType": {
             "@id": "ceterms:occupationType",
@@ -221,7 +221,7 @@
             }
         },
         "placesTaken": {
-            "@id": "lsip:placesTaken",
+            "@id": "dfcm:placesTaken",
             "@type": "xsd:integer"
         },
         "postalCode": {
@@ -264,7 +264,7 @@
             "@context": {
                 "skos": "http://www.w3.org/2004/02/skos/core#",
                 "Concept": "skos:Concept",
-                "@base": "http://example.org/lsip-schemes/",
+                "@base": "http://example.org/dfcm-schemes/",
                 "inScheme": {
                     "@id": "skos:inScheme",
                     "@type": "@id"
@@ -295,7 +295,7 @@
             }
         },
         "whereNext": {
-            "@id": "lsip:whereNext",
+            "@id": "dfcm:whereNext",
             "@container": "@language"
         },
         "alignmentType": {
@@ -318,7 +318,7 @@
             "@id": "ceterms:framework",
             "@type": "@id",
             "@context": {
-                "@base": "http://example.org/lsip-schemes/"
+                "@base": "http://example.org/dfcm-schemes/"
             }
         },
         "frameworkName": {

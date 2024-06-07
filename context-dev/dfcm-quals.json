@@ -1,0 +1,7 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "dfcm-qual": "https://example.org/dfcm/quals/",
+    "NVQ": "dfcm-qual:NVQ"
+  }
+}
