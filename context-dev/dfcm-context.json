@@ -135,7 +135,7 @@
             "@container": "@language"
         },
         "estimatedCost": {
-            "@id": "cetmers:estimatedCost",
+            "@id": "ceterms:estimatedCost",
             "@type": "@id"
         },
         "estimatedDuration": {
