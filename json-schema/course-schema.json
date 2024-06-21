@@ -1,5 +1,5 @@
 {
-    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$schema": "https://json-schema.org/draft-07/schema",
     "$id": "provider-schema.json",
     "description": "Draft schema for validating LSIP provider descriptions with no extensions.",
     "type": "object",
@@ -14,6 +14,7 @@
         "equipmentRequired",
         "codedNotation",
         "isPreparationFor",
+        "identifier",
         "hasOffering",
         "subject",
         "subjectWebpage",
@@ -28,20 +29,150 @@
             "$ref": "common-schema.json#name"
         },
         "description": {
-            "$ref": "common-schema.json#description"
+            "$ref": "common-schema.json#descriptive-text"
         },
         "assessmentMethodDescription": {
-            "$ref": "common-schema.json#description"
+            "$ref": "common-schema.json#descriptive-text"
         },
-        "audience": {},
-        "entryCondition": {},
-        "equipmentRequired": {},
-        "codedNotation": {},
-        "isPreparationFor": {},
-        "hasOffering": {},
-        "subject": {},
-        "subjectWebpage": {},
-        "teaches": {},
-        "whereNext": {}
+        "audience": {
+            "type": "object",
+            "required": [
+                "type",
+                "description"
+            ],
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "enum": [
+                        "EducationalAudience"
+                    ]
+                },
+                "description": {
+                    "$ref": "common-schema.json#descriptive-text"
+                }
+            }
+        },
+        "entryCondition": {
+            "type": "object",
+            "required": [
+                "type",
+                "description"
+            ],
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "enum": [
+                        "ConditionProfile"
+                    ]
+                },
+                "description": {
+                    "$ref": "common-schema.json#descriptive-text"
+                }
+            }
+        },
+        "equipmentRequired": {
+            "$ref": "common-schema.json#descriptive-text"
+        },
+        "codedNotation": {
+            "type": "string"
+        },
+        "identifier": {
+            "type": "object",
+            "$ref": "#courseID"
+        },
+        "isPreparationFor": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "hasOffering": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "subject": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "required": [
+                    "type",
+                    "notation",
+                    "prefLabel",
+                    "inScheme"
+                ],
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "enum": [
+                            "Concept"
+                        ]
+                    },
+                    "inScheme": {
+                        "type": "string",
+                        "enum": [
+                            "SSA"
+                        ]
+                    },
+                    "notation": {
+                        "type": "string"
+                    },
+                    "prefLabel": {
+                        "$ref": "common-schema.json#name"
+                    }
+                }
+            }
+        },
+        "subjectWebpage": {
+            "$ref": "common-schema.json#http-uri"
+        },
+        "teaches": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "required": [
+                    "competencyText"
+                ],
+                "properties": {
+                    "competencyText": {
+                        "$ref": "common-schema.json#descriptive-text"
+                    }
+                }
+            }
+        },
+        "whereNext": {
+            "$ref": "common-schema.json#descriptive-text"
+        }
+    },
+    "$defs": {
+        "courseID": {
+            "$anchor": "courseID",
+            "type": "object",
+            "required": [
+                "type",
+                "identifierTypeName",
+                "identifierValueCode"
+            ],
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "enum": [
+                        "IdentifierValue"
+                    ]
+                },
+                "identifierTypeName": {
+                    "type": "string",
+                    "enum": [
+                        "ESFA_COURSE_ID",
+                        "OTHER_GUID"
+                    ]
+                },
+                "identifierValueCode": {
+                    "$ref": "common-schema.json#guid"
+
+                }
+            }
+        }
     }
 }

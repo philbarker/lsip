@@ -1,5 +1,5 @@
 {
-    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$schema": "https://json-schema.org/draft-07/schema",
     "$id": "provider-schema.json",
     "description": "Draft schema for validating LSIP provider descriptions with no extensions.",
     "type": "object",
@@ -22,7 +22,7 @@
             "$ref": "#prn-schema"
         },
         "type": {
-            "$ref": "http-uri-schema.json"
+            "$ref": "common-schema.json#http-uri"
         },
         "address": {
             "oneOf": [
@@ -42,7 +42,7 @@
             }
         },
         "subjectWebpage": {
-            "$ref": "http-uri-schema.json"
+            "$ref": "common-schema.json#http-uri"
         }
     },
     "$defs": {

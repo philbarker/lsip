@@ -1,5 +1,5 @@
 {
-    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$schema": "https://json-schema.org/draft-07/schema",
     "$id": "location-schema.json",
     "description": "Draft schema for validating LSIP location descriptions such as addresses, with no extensions.",
     "type": "object",
@@ -19,7 +19,7 @@
             "$ref": "common-schema.json#name"
         },
         "identifier":  {
-            "$ref": "#locid-schema"
+            "$ref": "#locid"
         },
         "streetAddress":  {
             "type": "string"
@@ -31,15 +31,17 @@
             "type": "string"
         },
         "postalCode":  {
-            "type": "string"
+            "type": "string",
+            "minLength": 6,
+            "maxLength": 8
         },
         "addressCountry": {
             "type": "string"
         }
     },
     "$defs": {
-        "locid-identifier": {
-            "$anchor": "locid-schema",
+        "locid": {
+            "$anchor": "locid",
             "type": "object",
             "required": [
                 "type",

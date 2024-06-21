@@ -100,9 +100,12 @@
             "@id": "ceterms:currency",
             "@type": "xsd:string"
         },
-        "deliveryTypeDescription": {
-            "@id": "ceterms:deliveryTypeDescription",
-            "@container": "@language"
+        "deliveryType": {
+            "@id": "ceterms:deliveryType",
+            "@type": "@id",
+            "@context": {
+                "@base": "http://example.org/dfcm-schemes/delivery#"
+            }
         },
         "description": {
             "@id": "ceterms:description",
@@ -142,7 +145,7 @@
             "@id": "ceterms:estimatedDuration",
             "@type": "@id"
         },
-        "exactDuration": {
+        "duration": {
             "@id": "ceterms:exactDuration",
             "@type": "xsd:duration"
         },
@@ -232,7 +235,7 @@
             "@id": "ceterms:price",
             "@type": "xsd:decimal"
         },
-        "region": {
+        "regionServed": {
             "@id": "ceterms:region",
             "@type": "@id"
         },
@@ -264,7 +267,7 @@
             "@context": {
                 "skos": "http://www.w3.org/2004/02/skos/core#",
                 "Concept": "skos:Concept",
-                "@base": "http://example.org/dfcm-schemes/",
+                "@base": "http://example.org/dfcm-schemes/subject#",
                 "inScheme": {
                     "@id": "skos:inScheme",
                     "@type": "@id"
@@ -314,11 +317,15 @@
             "@id": "ceterms:targetNodeName",
             "@container": "@language"
         },
+        "targetNodeDescription": {
+            "@id": "ceterms:targetNodeDescription",
+            "@container": "@language"
+        },
         "framework": {
             "@id": "ceterms:framework",
             "@type": "@id",
             "@context": {
-                "@base": "http://example.org/dfcm-schemes/"
+                "@base": "http://example.org/dfcm-schemes/frameworks#"
             }
         },
         "frameworkName": {

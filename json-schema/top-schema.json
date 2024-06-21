@@ -1,5 +1,5 @@
 {
-    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$schema": "https://json-schema.org/draft-07/schema",
     "$id": "dfcm-schema.json",
     "description": "Draft schema for validating dfcm course descriptions with no extensions.",
     "type": "object",
@@ -51,7 +51,10 @@
                 },
                 "Presentations": {
                     "type": "array",
-                    "description": "An array of objects describing course offerings / presentations."
+                    "description": "An array of objects describing course offerings / presentations.",
+                    "items": {
+                        "$ref": "presentation-schema.json"
+                    }
                 },
                 "Locations": {
                     "type": "array",
