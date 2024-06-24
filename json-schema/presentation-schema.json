@@ -70,18 +70,14 @@
             "properties": {
                 "type": {
                     "type": "string",
-                    "enum": [
-                        "CostProfile"
-                    ]
+                    "const": "CostProfile"
                 },
                 "cost": {
                     "type": "integer"
                 },
                 "currency": {
                     "type": "string",
-                    "enum": [
-                        "GBP"
-                    ]
+                    "const": "GBP"
                 },
                 "description": {
                     "$ref": "common-schema.json#descriptive-text"
@@ -187,9 +183,7 @@
             "properties": {
                 "type": {
                     "type": "string",
-                    "enum": [
-                        "IdentifierValue"
-                    ]
+                    "const": "IdentifierValue"
                 },
                 "identifierTypeName": {
                     "type": "string",
@@ -213,9 +207,7 @@
             "properties": {
                 "type": {
                     "type": "string",
-                    "enum": [
-                        "DurationProfile"
-                    ]
+                    "const": "DurationProfile"
                 },
                 "duration": {
                     "$ref": "common-schema.json#duration"

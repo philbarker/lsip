@@ -56,14 +56,10 @@
             ],
             "properties": {
                 "type": {
-                    "enum": [
-                        "IdentifierValue"
-                    ]
+                    "const": "IdentifierValue"
                 },
                 "identifierTypeName": {
-                    "enum": [
-                        "UKPRN"
-                    ]
+                    "const": "UKPRN"
                 },
                 "identifierValueCode": {
                     "type": "string",

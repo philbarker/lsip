@@ -78,9 +78,7 @@
             "properties": {
                 "type": {
                     "type": "string",
-                    "enum": [
-                        "IdentifierValue"
-                    ]
+                    "const": "IdentifierValue"
                 },
                 "identifierTypeName": {
                     "type": "string",

@@ -43,9 +43,7 @@
             "properties": {
                 "type": {
                     "type": "string",
-                    "enum": [
-                        "EducationalAudience"
-                    ]
+                    "const": "EducationalAudience"
                 },
                 "description": {
                     "$ref": "common-schema.json#descriptive-text"
@@ -61,9 +59,7 @@
             "properties": {
                 "type": {
                     "type": "string",
-                    "enum": [
-                        "ConditionProfile"
-                    ]
+                    "const": "ConditionProfile"
                 },
                 "description": {
                     "$ref": "common-schema.json#descriptive-text"
@@ -105,15 +101,11 @@
                 "properties": {
                     "type": {
                         "type": "string",
-                        "enum": [
-                            "Concept"
-                        ]
+                        "const": "Concept"
                     },
                     "inScheme": {
                         "type": "string",
-                        "enum": [
-                            "SSA"
-                        ]
+                        "const": "SSA"
                     },
                     "notation": {
                         "type": "string"
@@ -157,9 +149,7 @@
             "properties": {
                 "type": {
                     "type": "string",
-                    "enum": [
-                        "IdentifierValue"
-                    ]
+                    "const": "IdentifierValue"
                 },
                 "identifierTypeName": {
                     "type": "string",
@@ -170,7 +160,6 @@
                 },
                 "identifierValueCode": {
                     "$ref": "common-schema.json#guid"
-
                 }
             }
         }

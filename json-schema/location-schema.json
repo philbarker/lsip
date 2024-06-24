@@ -13,7 +13,7 @@
             "$ref": "common-schema.json#id"
         },
         "type": {
-            "enum": ["Place"]
+            "const": "Place"
         },
         "name": {
             "$ref": "common-schema.json#name"
@@ -51,9 +51,7 @@
             "properties": {
                 "type": {
                     "type": "string",
-                    "enum": [
-                        "IdentifierValue"
-                    ]
+                    "const": "IdentifierValue"
                 },
                 "identifierTypeName": {
                     "type": "string"
