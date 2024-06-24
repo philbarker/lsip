@@ -9,7 +9,6 @@
         "Providers": [
             {
                 "id": "123435678",
-                "type": "EducationalOrganization",
                 "name": "Example College",
                 "identifier": {
                     "type": "IdentifierValue",

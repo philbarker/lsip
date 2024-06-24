@@ -27,6 +27,9 @@
                 ]
             }
         },
+        "id": {
+            "$ref": "common-schema.json"
+        },
         "data": {
             "type": "object",
             "additionalProperties": false,
