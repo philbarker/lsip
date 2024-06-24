@@ -1,6 +1,6 @@
 {
     "$schema": "https://json-schema.org/draft-07/schema",
-    "$id": "provider-schema.json",
+    "$id": "course-schema.json",
     "description": "Draft schema for validating course descriptions with no extensions.",
     "type": "object",
     "additionalProperties": false,
