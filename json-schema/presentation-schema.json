@@ -36,9 +36,10 @@
                     "type": "string",
                     "enum": [
                         "Weekdays",
-                        "Weekends",
+                        "Weekend",
                         "Daytime",
-                        "Evening"
+                        "Evening",
+                        "Day-BlockRelease"
                     ]
                 }
             }
