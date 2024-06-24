@@ -212,6 +212,12 @@
                 "addressLocality": "London",
                 "postalCode": "W1A 1EG"
             }
+        ],
+        "AwardingBodies": [
+            {
+                "id": "AB001",
+                "name": "Example Awading Body"
+            }
         ]
     }
 }

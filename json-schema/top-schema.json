@@ -68,7 +68,10 @@
                 },
                 "AwardingBodies": {
                     "type": "array",
-                    "description": "An array of objects describing qualifcation awarding bodies."
+                    "description": "An array of objects describing qualifcation awarding bodies.",
+                    "items": {
+                        "$ref": "awarding-body-schema.json"
+                    }
                 }
             }
         }
