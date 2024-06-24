@@ -13,7 +13,7 @@
             "@type": "@id"
         },
         "data": {
-            "@id": "@graph",
+            "@id": "dfcm:data",
             "@container": "@type"
         },
         "Courses": {
