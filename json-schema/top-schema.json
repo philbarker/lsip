@@ -47,7 +47,10 @@
                 },
                 "Qualifications": {
                     "type": "array",
-                    "description": "An array of objects describing qualifications."
+                    "description": "An array of objects describing qualifications.",
+                    "items": {
+                        "$ref": "qualification-schema.json"
+                    }
                 },
                 "Presentations": {
                     "type": "array",

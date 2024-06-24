@@ -115,14 +115,7 @@
             "@id": "sdo:educationalLevel",
             "@type": "@id",
             "@context": {
-                "sdo": "https://schema.org/",
-                "inDefinedTermSet": "sdo:inDefinedTermSet",
-                "DefinedTerm": "sdo:DefinedTerm",
-                "name": "sdo:name",
-                "termCode": {
-                    "@id": "sdo:termCode",
-                    "@type": "xsd:string"
-                }
+                "@base": "http://example.org/dfcm-schemes/levels#"
             }
         },
         "end": {
@@ -202,7 +195,7 @@
             "@id": "ceterms:occupationType",
             "@type": "@id"
         },
-        "offeredBy": {
+        "awardedBy": {
             "@id": "ceterms:offeredBy",
             "@type": "@id",
             "@context": {
