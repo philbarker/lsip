@@ -46,6 +46,12 @@
                 "@base": "https://example.edu/Location/"
             }
         },
+        "AwardingBodies": {
+            "@id": "ceterms:CredentialOrganization",
+            "@context": {
+                "@base": "https://example.edu/AwardingBody/"
+            }
+        },
         "ConditionProfile": "ceterms:ConditionProfile",
         "CostProfile": "ceterms:CostProfile",
         "Credential": "ceterms:Credential",
@@ -126,7 +132,7 @@
             "@id": "ceterms:entryCondition",
             "@type": "@id"
         },
-        "equipementRequired": {
+        "equipmentRequired": {
             "@id": "dfcm:equipmentRequired",
             "@container": "@language"
         },
