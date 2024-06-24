@@ -4,10 +4,12 @@
         "https://pjjk.net/context/dfcm-context.json",
         "https://pjjk.net/context/dfcm-quals.json"
     ],
+    "id": "test",
     "data": {
         "Providers": [
             {
                 "id": "123435678",
+                "type": "EducationalOrganization",
                 "name": "Example College",
                 "identifier": {
                     "type": "IdentifierValue",
